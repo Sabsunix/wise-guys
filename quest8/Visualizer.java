@@ -25,7 +25,7 @@ public class Visualizer extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+    
     }
 
     /**
@@ -35,22 +35,25 @@ public class Visualizer extends Actor
      */
     public void visualize(Key k)
     {
-        // Following is the visualization code
-        
         int width = k.getImage().getWidth();
         int x = k.getX();
         int drawHeight = image.getHeight() - width / 2;
         int y = Greenfoot.getRandomNumber(drawHeight) + width / 4;
-        //Color color = new Color(Greenfoot.getRandomNumber(256), Greenfoot.getRandomNumber(256), Greenfoot.getRandomNumber(256), 128);
         Color color = k.getColor(); // k is the Key parameter
         
-        /*Oval shape = new Oval(width, width / 2, color);
-        getWorld().addObject(shape, x, y);*/
+
+        // -------------------------------------------------------------
+        /*
+         * From here on out, the method determines what subclass to display
+           based on what key on the keyboard is pressed 
+           (using the key instance variable in the Key class)
         
-        
-        /* Proposed Key order:
-         * (leftmost to rightmost, 4 keys per person):
-         * 
+        * It's not that elegant, it could be more effecient, but it works.
+
+
+         * Proposed Key order:
+         * (leftmost to rightmost, including black keys, 4 keys per person)
+         
          * Cole
          * Ben
          * Nick
@@ -68,26 +71,22 @@ public class Visualizer extends Actor
         
         else if (k.key == "D" || k.key == "F" || k.key == "T" || k.key == "G")
         {
-            Oval shape = new Oval(width, width / 2, color);
-            getWorld().addObject(shape, x, y);
+            // Someone's subclass goes here
         }
         
         else if (k.key == "Y" || k.key == "H" || k.key == "U" || k.key == "J")
         {
-            Oval shape = new Oval(width, width / 2, color);
-            getWorld().addObject(shape, x, y);
+            // Someone's subclass goes here
         }
         
         else if (k.key == "K" || k.key == "O" || k.key == "L" || k.key == "P")
         {
-            Oval shape = new Oval(width, width / 2, color);
-            getWorld().addObject(shape, x, y);
+            // Someone's subclass goes here
         }
         
         else if (k.key == ";" || k.key == "'" || k.key == "]" || k.key == "\\")
         {
-            Oval shape = new Oval(width, width / 2, color);
-            getWorld().addObject(shape, x, y);
+            // Someone's subclass goes here
         }
         
 
