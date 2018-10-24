@@ -85,8 +85,11 @@ public class Visualizer extends Actor
         }
         
         else if (k.key == ";" || k.key == "'" || k.key == "]" || k.key == "\\")
-        {
-            // Someone's subclass goes here
+        { //Nathaniel's Section. spawns the 10.5hz wave.
+            int startHeight = image.getHeight() / 2;
+            GreenfootImage img1 = new GreenfootImage("wave.png");
+            Oscillioscope wave = new Oscillioscope(img1);
+            getWorld().addObject(wave, getImage().getWidth() / 2, startHeight);
         }
         
 
