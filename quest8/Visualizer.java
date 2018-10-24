@@ -74,9 +74,11 @@ public class Visualizer extends Actor
             // Someone's subclass goes here
         }
         
+        //Nick's section: spawn rectangle
         else if (k.key == "Y" || k.key == "H" || k.key == "U" || k.key == "J")
         {
-            // Someone's subclass goes here
+            Rect r  = new Rect();
+            getWorld().addObject(r, x, 195);
         }
         
         else if (k.key == "K" || k.key == "O" || k.key == "L" || k.key == "P")
