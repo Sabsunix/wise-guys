@@ -71,8 +71,7 @@ public class Visualizer extends Actor
         
         else if (k.key == "D" || k.key == "F" || k.key == "T" || k.key == "G")
         {
-            Penta p = new Penta();
-            getWorld().addObject(p,x,195)
+            // Ben's subclass goes here
         }
         
         //Nick's section: spawn rectangle
@@ -82,9 +81,12 @@ public class Visualizer extends Actor
             getWorld().addObject(r, x, 195);
         }
         
+        //William's section: spawn a pentagon
         else if (k.key == "K" || k.key == "O" || k.key == "L" || k.key == "P")
         {
             // Someone's subclass goes here
+            Penta p = new Penta();
+            getWorld().addObject(p,x,195);
         }
         
         else if (k.key == ";" || k.key == "'" || k.key == "]" || k.key == "\\")
