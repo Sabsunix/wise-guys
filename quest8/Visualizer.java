@@ -71,7 +71,8 @@ public class Visualizer extends Actor
         
         else if (k.key == "D" || k.key == "F" || k.key == "T" || k.key == "G")
         {
-            // Someone's subclass goes here
+            Penta p = new Penta();
+            getWorld().addObject(p,x,195)
         }
         
         //Nick's section: spawn rectangle
