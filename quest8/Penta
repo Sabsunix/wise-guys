@@ -1,0 +1,50 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Adds a Pentagon above the Piano keys
+ * 
+ * @author William Craig
+ * @version 1.0
+ */
+public class Penta extends Actor
+{
+    private int[] x1 = {29, 15, 15, 29, 38, 29};
+    private int[] y1 = {13, 18, 32, 37, 25,13};
+    private int[] x2 = {29, 15, 15, 29, 38, 29};
+    private int[] y2 = {13, 18, 32, 37, 25,13};
+    //Color color = new Color(Greenfoot.getRandomNumber(256), Greenfoot.getRandomNumber(256), Greenfoot.getRandomNumber(256), 128);
+    public Penta(int width, int height, Color color)
+    {
+        GreenfootImage image = new GreenfootImage(width, height);
+        image.setColor(color);
+        image.drawPolygon(x1, y1, x1.length);
+        image.fillPolygon(x2, y2, x2.length);
+        setImage(image);
+        setRotation(90);
+    }
+    public Penta(Color color)
+    {
+        this(50, 50, color);
+    }
+    public Penta()
+    {
+        
+        this(50, 50, Color.BLUE);
+    }
+    /**
+     * Act - do whatever the Penta wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    private int speed =1;
+    public void act() 
+    {
+        if (getY()<340)
+        {
+            speed++;
+        }else
+        {
+            getWorld().removeObject(this);
+        }
+        move(speed);
+    }    
+}
