@@ -158,4 +158,17 @@ public final class Vector
         dx = length * Math.cos(Math.toRadians(direction));
         dy = length * Math.sin(Math.toRadians(direction));   
     }
+    
+    /**
+     * Return a copy of this vector.
+     */
+    public Vector copy()
+    {
+        Vector copy = new Vector();
+        copy.dx = dx;
+        copy.dy = dy;
+        copy.direction = direction;
+        copy.length = length;
+        return copy;
+    }    
 }

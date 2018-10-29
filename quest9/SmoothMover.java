@@ -41,6 +41,12 @@ public abstract class SmoothMover extends Actor
     {
         exactX = exactX + velocity.getX();
         exactY = exactY + velocity.getY();
+        if (exactX >= getWorld().getWidth()) {
+            exactX = 0;
+        }
+        if (exactX < 0) {
+            exactX = getWorld().getWidth() - 1;
+        }
         super.setLocation((int) exactX, (int) exactY);
     }
 
@@ -108,6 +114,14 @@ public abstract class SmoothMover extends Actor
     public double getSpeed()
     {
         return velocity.getLength();
+    }
+    
+    /**
+     * Return the current speed.
+     */
+    public Vector getVelocity() 
+    {
+        return velocity.copy();
     }
     
     /**
