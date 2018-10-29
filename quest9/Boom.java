@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The boom from a bomb. punches holes in the world
+ * The boom from a bomb.
  * 
  * @author Nathaniel Larsen 
  * @version 10.28.18

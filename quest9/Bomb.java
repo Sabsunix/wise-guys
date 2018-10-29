@@ -25,17 +25,17 @@ public class Bomb extends SmoothMover
     {
         addToVelocity(MyWorld.GRAVITY);
         move();
-        burnFuse();
+        explode();
         
     }
     
-    public void burnFuse()
+    public void explode()
     {
-        if (getY() > 324) {
-            if (getOneIntersectingObject(Target.class) !=null){
+        if (getOneIntersectingObject(Target.class) !=null){
                 removeTouching(Target.class);
                 getWorld().addObject(new Boom(), getX(), getY());
             }
+        if (getY() > 324) {
             getWorld().addObject(new Boom(), getX(), getY() - 2);
             getWorld().removeObject(this);
         }
