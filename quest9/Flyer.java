@@ -25,6 +25,11 @@ public class Flyer extends SmoothMover
             dropBomb();
             bombTime = 0;
         }
+        if (Greenfoot.isKeyDown("n") && bombTime >= bombReset) 
+        {
+            dropNuke();
+            bombTime = 0;
+        }
         
         // Add your action code here.
     }    
@@ -33,5 +38,13 @@ public class Flyer extends SmoothMover
     {
         Bomb bomb  = new Bomb(new Vector(30, getSpeed()));
         getWorld().addObject(bomb, getX(), getY());
+    }
+     /**
+     * method added by Nick for his Nuke class.
+     */
+    public void dropNuke()
+    {
+        Nuke nuke = new Nuke(new Vector(20, getSpeed()));
+        getWorld().addObject(nuke, getX(), getY());
     }
 }
