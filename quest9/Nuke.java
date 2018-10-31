@@ -2,8 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * A nuclear bromb that drops to ground towards a target.
- * 
- * @author Nicholas Anderson
+ * PRESS "N" KEY TO DROP NUKE FROM FLYER
+ *
+ * @author NICHOLAS ANDERSON
  * @version 1.0
  * @date October 30th, 2018
  */
