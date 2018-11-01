@@ -35,7 +35,7 @@ public class Nuke extends SmoothMover
                 getWorld().addObject(new NukesEnd(), getX(), getY());
                 getWorld().removeObject(this);
             }
-        if (getY() > 324) {
+        if (getY() > 300) {
             getWorld().addObject(new NukesEnd(), getX(), getY() - 2);
             getWorld().removeObject(this);
         }
