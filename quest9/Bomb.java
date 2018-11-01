@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bomb extends SmoothMover
 {
+     
     public Bomb()
     {
         this(new Vector(0, 3));
@@ -23,7 +24,7 @@ public class Bomb extends SmoothMover
      */
     public void act() 
     {
-        addToVelocity(MyWorld.GRAVITY);
+        addToVelocity(Flyerworld.GRAVITY);
         move();
         explode();
         
@@ -35,7 +36,7 @@ public class Bomb extends SmoothMover
                 removeTouching(Target.class);
                 getWorld().addObject(new Boom(), getX(), getY());
             }
-        if (getY() > 324) {
+        if (getY() > getWorld().getHeight() - 32) {
             getWorld().addObject(new Boom(), getX(), getY() - 2);
             getWorld().removeObject(this);
         }
