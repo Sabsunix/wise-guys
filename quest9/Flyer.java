@@ -20,18 +20,25 @@ public class Flyer extends SmoothMover
     {
         move();
         bombTime++;
+        
         if (Greenfoot.isKeyDown("\\") && bombTime >= bombReset) 
         {
             dropBomb();
             bombTime = 0;
         }
+        
         if (Greenfoot.isKeyDown("n") && bombTime >= bombReset) 
         {
             dropNuke();
             bombTime = 0;
         }
         
-        // Add your action code here.
+        if (Greenfoot.isKeyDown("h") && bombTime >= bombCooldown) 
+        {
+            dropHorse();
+            bombTime = 0;
+        }
+        
     }    
     
     public void dropBomb()
@@ -46,5 +53,15 @@ public class Flyer extends SmoothMover
     {
         Nuke nuke = new Nuke(new Vector(20, getSpeed()));
         getWorld().addObject(nuke, getX(), getY());
+    }
+    
+    /**
+    * Drop a rocking horse!
+    * @author Cole Tomaro
+    */
+    public void dropHorse()
+    {
+        RockingHorse h = new RockingHorse(new Vector(280, getSpeed()));
+        getWorld().addObject(h, getX(), getY());
     }
 }
