@@ -106,7 +106,7 @@ Planned Images:
 
 
 D. Enemies : William Craig
-    Description: 
+    Description: The enemies appear throught the game to deter the player from completing a puzzle, or as part of a puzzle, they can do damage to the player and be destroyed by rocks
 
 Classes include:
     - enemies (ones that shoot projectiles, ones that just walk around, and ones that bounce)
