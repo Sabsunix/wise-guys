@@ -44,6 +44,7 @@ B. Player controlled main character : Ben Smith
 
 Description: The player controlled character who will interact and engage with the obstacles and enemies put in their way.
 They will be able to run, walk, and pick up  enchantments.
+
 Classes include:
     1. Nebukar (the player's character): Can run, jump, and pick up enchanments. Able to interact with doors and obstalces to progress further through the game.
     2. Mover: The superclass for moving, jumping, and interacting with Nebukar and other potential characters. 
@@ -110,4 +111,28 @@ D. Enemies : William Craig
 
 
 E. HUD, Status & Instructions : Cole Tomaro
-// put your text here
+
+Description: The Heads-Up Display, menus, game instructions, and other info for the player
+
+Classes include:
+    1. HealthBar: displaying how much health the player has
+    2. ItemSlot: displays what items/power-ups the player currently holds
+    3. Instruction: text instructions that display on screen.
+    4. Menu: you know what a menu is, right?
+Object Interactions (Collisions):
+    - A button press will toggle the HUD visibility
+    - A button press will display/dismiss instructions
+Planned Animations:
+    - Appearance and disappearance of HUD, menus, instructions
+    - Health bar increase and decrease
+Planned Images and Sources:
+    - Health Bar
+    - Power-up/item slot(s) (probably a simple box)
+    - Instructions background
+    - Menu background
+    - HUD background/border?
+    Source: Ari Feldman's SpriteLib
+Planned Sounds
+    - Sound for health loss
+    - Sound when player enters low-health state
+    - Sound when player picks up a power-up
