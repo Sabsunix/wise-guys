@@ -41,8 +41,34 @@ Doorways, gates, bridges, and or obstacles opening or closing.
 
 B. Player controlled main character : Ben Smith
 
+Description: 
+	The player controlled character who will interact and engage with the obstacles and enemies put in their way. They will be able to run, walk, and pick up  enchantments. 
+	1. Nebukar (the player's character): Can run, jump, and pick up enchanments. Able to interact with doors and obstalces to progress further through the game.
+	2. Mover: The superclass for moving, jumping, and interacting with Nebukar and other potential characters. 
+	3. Thrower: Handles throwing and projectile mechanics for Nebukar. 
+Object Collisions: 
+	- Nebukar can run and jump on platforms
+	- Attack and destroy enemies and obstacles
+	-Pick up enchantments to enhance their abilities and power
+	- Take damage from enemy projectiles and other obstacles
+	- Block projectiles with a shield
+	- Open doors/portals
+Planned Animations:
+	-Nebukar running in both directions
+	-Nebukar jumping in various directions
+	-Nebukar throwing/shooting a projectile
+	-Nebukar blocking with a shield
+	-Nebukar activating an enchantment
+Planned Images and Sources:
+	-Nebukar idle
+	-Nebukar running: series of images
+	-Nebukar jumping and landing
+	-Nebukar with a shield 
+	Source: SpriteLib by Ari Feldman
+Planned Sounds
+	-Nebukar taking damage (a yelp or scream?)
+	-Nebukar acquring a enchantment. ("lets get it!", "This'll show em!")
 
-// put your text here
 
 
 C. PowerUps : Nathaniel Larsen
