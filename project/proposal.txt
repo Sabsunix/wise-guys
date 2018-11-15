@@ -1,0 +1,56 @@
+CS-12GP Project Proposal
+Guild: Wise Guys
+
+I. Wise Guys Guild Members
+--------------------------
+Nicholas Anderson -- World / Level
+William Craig -- Enemies
+Nathaniel Larsen -- Powerups, Projectiles
+Ben Smith -- Main Character
+Cole Tomaro -- Status & instructions
+
+III. Game subsystems
+--------------------
+
+A. World / Level : Nicholas Anderson
+Desrciption: The environment that the actors work in. Our world will potentially be platform style labrynth. This is still up
+for change.  But i believe the wise guys are going for a puzzle platform game type.
+Classes include:
+1. Subworld of World: the world that the characters work in.
+2. Platform: The platform image of actor superclass that makes up worlds geometry.
+3. Doors and Background: Doors and background artwork that makes up platform and the world.
+
+Planned Images:
+Background artwork jpeg image.
+platform jpg image.
+Doorways and gateway images.
+Background obstacles and barriers.
+
+Planned Sounds:
+Doors and Gateways opening and or closing.
+Potential Background music or sounds (potentially as a guild proccess).
+
+Planned Animation:
+Doorways, gates, bridges, and or obstacles opening or closing.
+
+B. Player controlled main character : Ben Smith
+
+
+// put your text here
+
+
+C. 
+
+
+
+
+D. Enemies : William Craig
+
+
+// put your text here
+
+
+E. Status & Mechanics : Cole Tomaro
+
+
+// put your text here
