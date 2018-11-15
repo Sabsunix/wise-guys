@@ -106,8 +106,33 @@ Planned Images:
 
 
 D. Enemies : William Craig
-// put your text here
+    Description: 
 
+Classes include:
+    - enemies (ones that shoot projectiles, ones that just walk around, and ones that bounce)
+    -projectiles (to be shot by enemies)
+Object collision:
+    - player colliding with projectiles thrown by the enemies cause the health displayed on the health bar to decrease
+    - rocks colliding with enemies cause the enemies to die
+    - enemy projectiles colliding with shield powerups cause the enemy projectile and the shield to get deleted
+    - enemies colliding with the player causing the health bar to decrease in health
+    -the projectiles colliding with something other then the player, causing them to disappear
+Planned Animations:
+    - walking animations for the walking and bouncing enemies
+    -a firing animation for the enemies that shoot projectiles
+    -a death animation for the enemies
+Planned Sounds:
+    -a walking sound for the walking enemies
+    -a bouncing sound for the bouncing enemies(possibly a sound like a slime would make)
+    -the sound of the projectiles firing
+    -the sound of the projectiles contacting with something that's not the player
+    -the sound of the projectiles hitting the player
+    -the sound of the enemies dying
+Planned Images:
+    - enemies (different images for the different types)
+    - projectiles (probably an arrow or a bullet)
+    -death image (like a poof of smoke or something similar)
+    - an image for when the projectiles connect with something
 
 
 E. HUD, Status & Instructions : Cole Tomaro
