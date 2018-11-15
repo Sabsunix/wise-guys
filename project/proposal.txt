@@ -9,6 +9,12 @@ Nathaniel Larsen -- Powerups, Projectiles
 Ben Smith -- Main Character
 Cole Tomaro -- Status & instructions
 
+II. Core Concept
+----------------
+Our guild project is a platform game in a single frame. the player starts at one position of the map and must find their way
+to a key which unlocks a door to the next level. The player will be able to jump and pickup and throw items to help them avoid 
+death from falling or from enemies encountered through the path onward.
+
 III. Game subsystems
 --------------------
 
@@ -39,10 +45,36 @@ B. Player controlled main character : Ben Smith
 // put your text here
 
 
-C. 
+C. PowerUps : Nathaniel Larsen
+Items which can be found around the play map to help the player reach his goal of progressing through the locked door
+-Classes include:
+Key - Must be picked up and taken to the door to pass through
+Rock - Can be picked up to be thrown at enemies
+Shield - Absorbs enemy projectiles for a given amount of hits
+Health Potion - Restores the players health from damage taken from falling or fighting
 
+Object collision:
+- player colliding with a health potion automatically consumes it iff any damage has been taken
+- rocks that hit enemies knock them out or kill them
+- player colliding with a shield makes them impervious to the next SHIELD_PREVENT damage
+- player colliding with key allows them to open one locked door
 
+Planned Animations:
+- rock tumble (projectile motion) left and right
+- wave shrinking around player when shield is picked up
+AND/OR
+- smoke around player when shield is depleted
 
+Planned Sounds:
+- Thunk sound of a rock hitting something
+- Glug sound of player drinking potion
+- 'tink' sound of shield absorbing impacts
+
+Planned Images:
+- rock
+- red or green potion bottle
+- shield emblem
+- key
 
 D. Enemies : William Craig
 
