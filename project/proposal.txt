@@ -11,7 +11,7 @@ Cole Tomaro -- HUD, Status & Instructions
 
 II. Core Concept
 ----------------
-Our guild project is a platform game in a single frame. the player starts at one position of the map and must find their way
+Our guild project is a platform game in a single frame. The player starts at one position of the map and must find their way
 to a key which unlocks a door to the next level. The player will be able to jump and pickup and throw items to help them avoid 
 death from falling or from enemies encountered through the path onward.
 
@@ -81,7 +81,7 @@ Classes include:
     - Key - Must be picked up and taken to the door to pass through
     - Rock - Can be picked up to be thrown at enemies
     - Shield - Absorbs enemy projectiles for a given amount of hits
-    -Health Potion - Restores the players health from damage taken from falling or fighting
+    - Health Potion - Restores the players health from damage taken from falling or fighting
 Object collision:
     - player colliding with a health potion automatically consumes it iff any damage has been taken
     - rocks that hit enemies knock them out or kill them
@@ -109,5 +109,5 @@ D. Enemies : William Craig
 
 
 
-E. Status & Mechanics : Cole Tomaro
+E. HUD, Status & Instructions : Cole Tomaro
 // put your text here
