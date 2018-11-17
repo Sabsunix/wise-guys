@@ -40,10 +40,13 @@ public class Hammer extends Sprite
     /** Fly through the air */
     public void launch()
     {
-        //get player's direction, p.getDirection(); 
-        //setVelocity()
+        //get player's direction, facing 
+        //if facing = left
+            //setVelocity(-2.0 + dx, -0.27)
+        //else 
+            //setVelocity(2.0 + dx, -0.27)
         //move();
-            //p.getDirection(), setVelocity(), & move() -needed in sprite class ^^
+        //p.getDirection(), setVelocity(), & move() -needed in sprite class ^^
         launched = true;
     }
     /**
@@ -53,6 +56,7 @@ public class Hammer extends Sprite
     public void gotHammer(){
         setImage(images[IMAGES - 1]);
         Greenfoot.playSound("hammer.wav");
+        held = true;
     }
     
     private void cacheImages(){
