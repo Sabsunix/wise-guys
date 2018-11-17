@@ -27,4 +27,7 @@ public class Player extends Sprite
     public void hasShield(){
         shielded = true;
     }
+    public void noShield(){
+        shielded = false;
+    }
 }
