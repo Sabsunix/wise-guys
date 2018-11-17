@@ -30,4 +30,7 @@ public class Player extends Sprite
     public void noShield(){
         shielded = false;
     }
+    public boolean isShielded(){
+        return shielded;
+    }
 }
