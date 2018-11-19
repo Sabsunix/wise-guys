@@ -42,7 +42,7 @@ public class Player extends Sprite
     {
         super.move();
         double dx = getVelocityX();
-        GameManager w = (GameManager) getWorld();
+        Level1 w = (Level1) getWorld();
         if (w == null || dx == 0)
         {
             return;
