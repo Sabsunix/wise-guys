@@ -13,6 +13,7 @@ public class Level1 extends World
     private static final int TILE_HEIGHT = 35;
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
+    private Player thor = new Player();
     private static final String[] MAP = 
     {
         "                                                                   ",
@@ -25,7 +26,7 @@ public class Level1 extends World
         "  WWWWW                                                            ",
         "  WWWWW                                                            ",
         "  DWWWW                                                           ",
-        "CCCCCCCCCCCCCCCCCCR   LBBBBBBBBBBBBCCCCCCCCCCCCL   BBBBBBBBBBBBBBBB",
+        "CCCCCCCCCCCCCCCCCCR   LBBBBBBBBBBBBCCCCCCCCCCCCR   BBBBBBBBBBBBBBBB",
         "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
     };
     
@@ -42,13 +43,13 @@ public class Level1 extends World
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT - getHeight() % TILE_HEIGHT;
         createPlatforms(MAP);
-        //addPlayer object code.
         //addPowerUp object code.
         //add background images.
+        addObject(thor, 35, 0);
     }
     
     /**
-     * Method to allow scrolling background to move through level1.
+     * Method to allow scrolling background to move through level1. Add overide move method to player class
      */
         public void scrollHorizontal(double dx)
     {
