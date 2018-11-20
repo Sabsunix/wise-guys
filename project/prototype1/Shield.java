@@ -13,7 +13,7 @@ public class Shield extends Items
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private Player p;
     public Shield(){
-        cacheImages();
+        //cacheImages();
         //
         //set p = ^
     }
@@ -72,15 +72,15 @@ public class Shield extends Items
         //Greenfoot playSound("crumble.wav")
         getWorld().removeObject(this);
     }
-
+    /*
     private void cacheImages(){
-        GreenfootImage base = new GreenfootImage("wave.gif");
+        //GreenfootImage base = new GreenfootImage("wave.gif");
         for (imgNum = 0; imgNum < IMAGES; imgNum--){
-            images[imgNum] = new GreenfootImage(base);
+            //images[imgNum] = new GreenfootImage(base);
             int sizeX = p.getImage().getWidth() + AURA * imgNum;
             int sizeY = p.getImage().getHeight() + AURA * imgNum;
             images[imgNum].scale(sizeX, sizeY);
         }
         imgNum = 0;
-    }
+    }*/
 }
