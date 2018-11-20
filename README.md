@@ -13,3 +13,5 @@ Current subfolders:
 * quest8 - Quest 8: Visualize this!
 
 * quest9 - Q9: Gravitational Attraction
+
+* project - Our final project
