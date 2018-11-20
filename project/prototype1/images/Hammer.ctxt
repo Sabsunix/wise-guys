@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Hammer
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Hammer\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Hammer()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ launch()
+comment3.text=Fly\ through\ the\ air
+comment4.params=
+comment4.target=void\ gotHammer()
+comment4.text=\r\n\ gotHammer\ -\ Player\ picks\ up\ the\ hammer,\ \r\n\ its\ angle\ changes\ and\ Thor\ makes\ an\ announcement\ \ \ \ \ \r\n
+comment5.params=
+comment5.target=void\ cacheImages()
+comment6.params=
+comment6.target=void\ animate()
+numComments=7

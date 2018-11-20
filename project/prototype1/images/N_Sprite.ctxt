@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=N_Sprite
+comment0.text=\r\n\ Sprite\ class\ for\ Nebukar.\r\n\ \r\n\ @author\ (Ben\ Smith\ and\ Ed\ Parrish)\ \r\n\ @version\ Prototype\r\n
+comment1.params=
+comment1.target=N_Sprite()
+comment2.params=velocityX\ velocityY
+comment2.target=N_Sprite(double,\ double)
+comment2.text=\r\n\ Constructor\ that\ sets\ velocity\ of\ the\ sprite.\r\n\r\n\ @param\ newVelocityX\ The\ x\ component\ of\ the\ velocity.\r\n\ @param\ newVelocityY\ The\ y\ component\ of\ the\ velocity.\r\n
+comment3.params=
+comment3.target=void\ checkHealth()
+comment4.params=
+comment4.target=void\ act()
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ N_Sprite\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment5.params=
+comment5.target=void\ move()
+comment5.text=\r\n\ Move\ based\ on\ velocity.\r\n
+numComments=6
