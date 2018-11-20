@@ -19,5 +19,7 @@ Sprite/Hammer/Shield =  Nathaniel Larsen
 
 Player Class = Ben
 
+enemies = will
 
+user player dialogue = Cole Tomaro
 
