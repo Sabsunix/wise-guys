@@ -33,21 +33,21 @@ public class Player extends Sprite
     public boolean isShielded(){
         return shielded;
     }
-    
     /**
     * add this method here to compliment similar method in world that allows player to side scroll in unbound world
     * while player stays fixed in center of screen.
     */
-    @Override public void move()
+   
+    public void move()
     {
-        super.move();
-        double dx = getVelocityX();
+        //super.move();
+        //double dx = getVelocityX();
         Level1 w = (Level1) getWorld();
-        if (w == null || dx == 0)
+        //if (w == null || dx == 0)
         {
             return;
         }
-        w.scrollHorizontal(dx);
-        setLocation(w.getWidth() / 2, getY()); // stay in horizontal center
+        // w.scrollHorizontal(dx);
+        //setLocation(w.getWidth() / 2, getY()); // stay in horizontal center
     }
 }

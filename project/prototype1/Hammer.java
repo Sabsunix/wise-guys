@@ -12,6 +12,7 @@ public class Hammer extends Sprite
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private boolean held = false, launched = false;
+    private Player p;
     public Hammer()
     {
         cacheImages();
@@ -31,8 +32,7 @@ public class Hammer extends Sprite
                 getWorld().removeObject(this);
             }
         }
-        if (held){
-            Player p = (Player) getOneIntersectingObject(Player.class);
+        if (held){ 
             setLocation(p.getX(), p.getY());
         }
     }    
@@ -41,13 +41,14 @@ public class Hammer extends Sprite
     public void launch()
     {
         //get player's direction, facing 
-        //if facing = left
-            //setVelocity(-2.0 + dx, -0.27)
+        //if (p.getLeftFacing())
+            //setVelocity(-2.0 + p.getVelocityX, -0.27)
         //else 
-            //setVelocity(2.0 + dx, -0.27)
+            //setVelocity(2.0 + p.getVelocityX, -0.27)
         //move();
         //p.getDirection(), setVelocity(), & move() -needed in sprite class ^^
         launched = true;
+        held = false;
     }
     /**
      * gotHammer - Player picks up the hammer, 
@@ -57,6 +58,7 @@ public class Hammer extends Sprite
         setImage(images[IMAGES - 1]);
         Greenfoot.playSound("hammer.wav");
         held = true;
+        p = (Player) getOneIntersectingObject(Player.class);
     }
     
     private void cacheImages(){

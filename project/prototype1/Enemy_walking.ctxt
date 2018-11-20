@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Enemy_walking
+comment0.text=\r\n\ The\ enemy\ that\ will\ walk\ around\r\n\ \r\n\ @author\ William\ Craig\ \r\n\ @version\ 11/20/18\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Enemy_walking\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

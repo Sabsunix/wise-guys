@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Door
-comment0.text=\r\n\ Image\ of\ a\ door\ for\ level\ map.\ will\ also\ open\ and\ close\r\n\ IMAGE\ \=\ door.png\r\n\r\n\ @author\ Nicholas\ Anderson\r\n\ @version\ 1.0,\ November\ 18,\ 2018\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ animation\ of\ door\ opening\ closing?\r\n
-numComments=2

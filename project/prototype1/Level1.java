@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Level1 extends World
 {
-    private static final int TILE_WIDTH = 35;
-    private static final int TILE_HEIGHT = 35;
+    private static final int TILE_WIDTH = 32;
+    private static final int TILE_HEIGHT = 32;
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
     private Player thor = new Player();
@@ -39,9 +39,9 @@ public class Level1 extends World
     public Level1()
     {    
         
-        super(400, 400, 1, false);
+        super(400, 368, 1, false);
         leftX = TILE_WIDTH / 2;
-        topY = TILE_HEIGHT - getHeight() % TILE_HEIGHT;
+        topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT;
         createPlatforms(MAP);
         //addPowerUp object code.
         //add background images.
@@ -49,7 +49,7 @@ public class Level1 extends World
     }
     
     /**
-     * Method to allow scrolling background to move through level1. Add overide move method to player class
+     * Method to allow scrolling background to move through level1.
      */
         public void scrollHorizontal(double dx)
     {

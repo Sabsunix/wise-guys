@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Shield here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nathaniel Larsen
+ * @version 11/16/18
  */
 public class Shield extends Items
 {
@@ -13,7 +13,8 @@ public class Shield extends Items
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private Player p;
     public Shield(){
-        //get reference to player
+        cacheImages();
+        //
         //set p = ^
     }
 

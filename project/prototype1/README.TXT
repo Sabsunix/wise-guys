@@ -1,25 +1,27 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+
 ------------------------------------------------------------------------
 
 PROJECT TITLE: project prototype
-PURPOSE OF PROJECT: Get all classes together and to compille
-VERSION or DATE: 1.0; November 19, 2018
-HOW TO START THIS PROJECT: run?
-AUTHORS: Wise Guys guild
-USER INSTRUCTIONS: Have fun
+PURPOSE OF PROJECT: get all classes together and to compille
+VERSION or DATE: 1.0; november 19, 2018
+HOW TO START THIS PROJECT: run
+AUTHORS: Wise-Guys
+USER INSTRUCTIONS: check it out
 
+Subsystem Classes
+-----------------
 World class (Level1) = Nicholas Anderson
 Platform/platform-subclasses = Nicholas Anderson
 
 Items/item-subclasses = Nathaniel Larsen
 Sprite/Hammer/Shield =  Nathaniel Larsen
 
-Player Class = Ben
+Player Class (Nebukar) = Ben Smith
+-N_Sprite: superclass for Nebukar
+-QuickThrower: management for throwing Hammer
+-Nebukar: the Player controlled character who can run, jump, and pick up enchantments
 
-enemies = will
 
-HUD/HealthBar/Instruction/ItemSlot = Cole Tomaro
 
+
+William Craig's classes= Enemy_walking, Enemy_shooting, Enemy_bouncing and Enemy_projectile
