@@ -5,11 +5,11 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE: project prototype
-PURPOSE OF PROJECT: get all classes together and to compille
-VERSION or DATE: 1.0; november 19, 2018
+PURPOSE OF PROJECT: Get all classes together and to compille
+VERSION or DATE: 1.0; November 19, 2018
 HOW TO START THIS PROJECT: run?
-AUTHORS: wise guys
-USER INSTRUCTIONS: have fun
+AUTHORS: Wise Guys guild
+USER INSTRUCTIONS: Have fun
 
 World class (Level1) = Nicholas Anderson
 Platform/platform-subclasses = Nicholas Anderson
@@ -21,5 +21,5 @@ Player Class = Ben
 
 enemies = will
 
-user player dialogue = Cole Tomaro
+HUD/HealthBar/Instruction/ItemSlot = Cole Tomaro
 
