@@ -1,23 +1,53 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Sprite here.
+ * Sprite class for movers
  * 
  * @author Nathaniel
- * @version (a version number or a date)
+ * @version Prototype
  */
-public class Sprite extends Actor
+public abstract class Sprite extends Actor
 {
+    private double x = 0;
+    private double y = 0;
+    private double velocityX; // in pixels per act() call
+    private double velocityY; // in pixels per act() call 
     /**
-     * Act - do whatever the Sprite wants to do. This method is called whenever
+     * Constructor that sets velocity of the sprite.
+     *
+     * @param newVelocityX The x component of the velocity.
+     * @param newVelocityY The y component of the velocity.
+     **/
+    public Sprite ()
+    {
+        this(0.0, 0.0);
+    }
+
+    public Sprite(double velocityX, double velocityY)
+    {
+        this.velocityX = velocityX;
+        this.velocityY = velocityY;
+    }
+
+    public void checkHealth()
+    {
+
+    }
+
+    /**
+     * Act - do whatever the N_Sprite wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-    }
-    public int getHorzDirection(){
-        //return dx;
-        return 0;
+    }    
+
+    /**
+     * Move based on velocity.
+     */
+    public void move()
+    {
+
     }
 }

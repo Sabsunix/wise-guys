@@ -11,7 +11,7 @@ public class Shield extends Items
     private static final int SHIELDING = 50, IMAGES = 8, AURA = 2;
     private int integrity = SHIELDING, imgNum = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
-    private Player p;
+    private Nebukar p;
     public Shield(){
         //cacheImages();
         //
@@ -32,7 +32,7 @@ public class Shield extends Items
         //set player has shield bool = true
         int offsetX = getImage().getWidth() / 2;
         int offsetY = getImage().getHeight() / 2;
-        p = (Player) getOneObjectAtOffset(offsetX, offsetY, Player.class); 
+        p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class); 
         Color color = new Color(0,0,0,0);
         int vertical = p.getImage().getHeight() + 2;
         int horizontal = p.getImage().getWidth() + 2;

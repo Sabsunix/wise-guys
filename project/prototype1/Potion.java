@@ -19,7 +19,7 @@ public class Potion extends Items
     }    
     public void checkPlayer()
     {
-        Player p = (Player) getOneIntersectingObject(Player.class);
+        Nebukar p = (Nebukar) getOneIntersectingObject(Nebukar.class);
         if (p != null){
             if(p.getHealth() < MAX){
                 p.setHealth(p.getHealth() + HEAL);

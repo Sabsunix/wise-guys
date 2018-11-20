@@ -17,7 +17,7 @@ public class Nebukar extends Sprite
     private boolean canJump; // Jumping is allowed when true
     private static GreenfootImage faceRight;
     private static GreenfootImage faceLeft;
-    
+
     private int health;
     private boolean shielded;
     /**
@@ -93,6 +93,7 @@ public class Nebukar extends Sprite
     {
 
     }
+
     /**
      * Animates run.
      */
@@ -100,21 +101,44 @@ public class Nebukar extends Sprite
     {
 
     }
+
     /**
      * Method for enchantment pickup.
      */
     public void pickUp()
     {
     }
-     /**
+
+    /**
      * Checks if Nebukar has the key for unlock the door.
      */
     public void keyCheck()
     {
-        
+
     }
+
     public boolean getLeftFacing()
     {
         return facingLeft;
+    }
+
+    public int getHealth(){
+        return health;
+    }
+
+    public void setHealth(int newHealth){
+        health = newHealth;
+    }
+
+    public void hasShield(){
+        shielded = true;
+    }
+
+    public void noShield(){
+        shielded = false;
+    }
+
+    public boolean isShielded(){
+        return shielded;
     }
 }

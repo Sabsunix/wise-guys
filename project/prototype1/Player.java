@@ -18,21 +18,7 @@ public class Player extends Sprite
     {
         // Add your action code here.
     }    
-    public int getHealth(){
-        return health;
-    }
-    public void setHealth(int newHealth){
-        health = newHealth;
-    }
-    public void hasShield(){
-        shielded = true;
-    }
-    public void noShield(){
-        shielded = false;
-    }
-    public boolean isShielded(){
-        return shielded;
-    }
+    
     /**
     * add this method here to compliment similar method in world that allows player to side scroll in unbound world
     * while player stays fixed in center of screen.
