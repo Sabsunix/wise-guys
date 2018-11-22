@@ -134,10 +134,12 @@ public class Nebukar extends Sprite
 
     public void hasShield(){
         shielded = true;
+        //set images to shielded versions
     }
 
     public void noShield(){
         shielded = false;
+        //back to base image
     }
 
     public boolean isShielded(){

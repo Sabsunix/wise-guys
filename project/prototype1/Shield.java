@@ -29,18 +29,17 @@ public class Shield extends Items
 
     public void gotShield()
     {
-        //set player has shield bool = true
+        
         int offsetX = getImage().getWidth() / 2;
         int offsetY = getImage().getHeight() / 2;
         p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class); 
-        
+        p.hasShield(); //will change players image to shielded
         Color color = new Color(0,0,0,0);
         int vertical = p.getImage().getHeight() + 2;
         int horizontal = p.getImage().getWidth() + 2;
         imgNum = IMAGES-1;
         animate();
         GreenfootImage img = new GreenfootImage(horizontal, vertical);
-        img.setColor(color);
         setImage(img);
     }
 
@@ -66,12 +65,13 @@ public class Shield extends Items
             setImage(images[imgNum]);
             imgNum--;
         }
-        setImage(new GreenfootImage(1,1));
+        //setImage(new GreenfootImage(1,1));
     }
 
     public void disintegrate()
     {
         //Greenfoot playSound("crumble.wav")
+        p.noShield();
         getWorld().removeObject(this);
     }
     /* 
