@@ -57,4 +57,14 @@ public abstract class Sprite extends Actor
     {
 
     }
+    /**
+     * Gets the horizontal velocity of this Sprite in
+     * pixels per act() call.
+     *
+     * @return The x horizontal velocity of this Sprite.
+     */
+    public double getVelocityX()
+    {
+        return velocityX;
+    }
 }
