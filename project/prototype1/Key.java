@@ -1,19 +1,35 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Key here.
+ * A Key to unlock the Door
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nathaniel Larsen 
+ * @version 11.21.18
  */
 public class Key extends Items
 {
+    private Nebukar player;
+    
     /**
-     * Act - do whatever the Key wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Wait to be picked up
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        checkPlayer();
+    } 
+
+    /**
+     * Check if there's a player touching the key
+     * if there is, set the player's hasKey boolean to true and disappear.
+     */
+    public void checkPlayer()
+    {
+        //Get a reference to the Nebukar touching the key, if one is
+        player = (Nebukar) getOneIntersectingObject(Nebukar.class);
+        if (player != null){
+            //set that Nebukar to be holding the key
+            player.hasKey = true;  
+            getWorld().removeObject(this);
+        }
+    }
 }

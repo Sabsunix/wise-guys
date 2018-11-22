@@ -20,6 +20,7 @@ public class Nebukar extends Sprite
 
     private int health;
     private boolean shielded;
+    public boolean hasKey;
     /**
      * Constructor for the main character
      */
@@ -28,6 +29,7 @@ public class Nebukar extends Sprite
         canJump = true; 
         facingLeft = true;
         shielded  = false;
+        hasKey = false;
     }
 
     /**
@@ -140,5 +142,26 @@ public class Nebukar extends Sprite
 
     public boolean isShielded(){
         return shielded;
+    }
+    
+    /**
+    * move method imported from Player class to allow player to stay centered
+    * while the world and all actors scroll left & right accordingly with user
+    * input movement.
+    * 
+    * -requires scrollHorizontal to be implemented in world class
+    */
+   
+    public void move()
+    {
+        //super.move();
+        //double dx = getVelocityX();
+        Level1 w = (Level1) getWorld();
+        //if (w == null || dx == 0)
+        {
+            return;
+        }
+        // w.scrollHorizontal(dx);
+        //setLocation(w.getWidth() / 2, getY()); // stay in horizontal center
     }
 }

@@ -12,7 +12,7 @@ public class Hammer extends Sprite
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private boolean held = false, launched = false;
-    private Player p;
+    private Nebukar p;
     public Hammer()
     {
         cacheImages();
@@ -58,7 +58,7 @@ public class Hammer extends Sprite
         setImage(images[IMAGES - 1]);
         Greenfoot.playSound("hammer.wav");
         held = true;
-        p = (Player) getOneIntersectingObject(Player.class);
+        p = (Nebukar) getOneIntersectingObject(Nebukar.class);
     }
     
     private void cacheImages(){

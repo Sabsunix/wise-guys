@@ -13,7 +13,7 @@ public class Level1 extends World
     private static final int TILE_HEIGHT = 32;
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
-    private Player thor = new Player();
+    private Nebukar thor = new Nebukar();
     private static final String[] MAP = 
     {
         "                                                                   ",

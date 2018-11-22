@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Items extends Actor
 {
+    //protected Nebukar p;
+    //Dont think i can use this, subclasses assign value to p and 
     /**
      * Act - do whatever the Items wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

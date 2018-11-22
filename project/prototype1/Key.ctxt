@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Key
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Key\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ Key\ to\ unlock\ the\ Door\r\n\ \r\n\ @author\ Nathaniel\ Larsen\ \r\n\ @version\ 11.21.18\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Key\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.text=\r\n\ Wait\ to\ be\ picked\ up\r\n
+comment2.params=
+comment2.target=void\ checkPlayer()
+comment2.text=\r\n\ Check\ if\ there's\ a\ player\ touching\ the\ key\r\n\ if\ there\ is,\ set\ the\ player's\ hasKey\ boolean\ to\ true\ and\ disappear.\r\n
+numComments=3

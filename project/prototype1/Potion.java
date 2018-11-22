@@ -9,23 +9,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Potion extends Items
 {
     private final int HEAL = 50, MAX = 100;
+    private Nebukar p;
     /**
-     * Act - do whatever the Potion wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Check for a player to heal.
      */
     public void act() 
     {
         checkPlayer();
     }    
+    
+    /**
+     * Check if there's a player touching the potion and if there is, 
+     * heal the player, play a sound, and disappear.
+     *
+     * needs glug.wav
+     */
     public void checkPlayer()
     {
-        Nebukar p = (Nebukar) getOneIntersectingObject(Nebukar.class);
+        p = (Nebukar) getOneIntersectingObject(Nebukar.class);
         if (p != null){
             if(p.getHealth() < MAX){
                 p.setHealth(p.getHealth() + HEAL);
                 if (p.getHealth() > MAX){
                     p.setHealth(MAX);
                 }
+                //Greenfoot.playSound("glug.wav")
                 getWorld().removeObject(this);
             }
         } 

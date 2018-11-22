@@ -33,6 +33,7 @@ public class Shield extends Items
         int offsetX = getImage().getWidth() / 2;
         int offsetY = getImage().getHeight() / 2;
         p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class); 
+        
         Color color = new Color(0,0,0,0);
         int vertical = p.getImage().getHeight() + 2;
         int horizontal = p.getImage().getWidth() + 2;
@@ -72,7 +73,7 @@ public class Shield extends Items
         //Greenfoot playSound("crumble.wav")
         getWorld().removeObject(this);
     }
-    /*
+    /* 
     private void cacheImages(){
         //GreenfootImage base = new GreenfootImage("wave.gif");
         for (imgNum = 0; imgNum < IMAGES; imgNum--){

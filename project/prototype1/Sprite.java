@@ -8,6 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Sprite extends Actor
 {
+    /*
+       needs variables : gravity 
+             methods : move() <implemented>, applyGravity()
+          why is check health in this method? 
+          is it just checking the player's health?
+          nebukar has a getHealth() method that returns his health int
+       */
     private double x = 0;
     private double y = 0;
     private double velocityX; // in pixels per act() call
