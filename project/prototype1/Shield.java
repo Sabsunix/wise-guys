@@ -61,6 +61,7 @@ public class Shield extends Items
     public void animate()
     {
         //aura of player shrinking around them upon pickup
+        setLocation(p.getX(), p.getY());
         while(imgNum >= 0){
             setImage(images[imgNum]);
             imgNum--;
