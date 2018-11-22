@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Shield here.
+ * A shield for the player to pickup
+ * (needs reference to player to work)
  * 
  * @author Nathaniel Larsen
  * @version 11/16/18
@@ -11,11 +12,19 @@ public class Shield extends Items
     private static final int SHIELDING = 50, IMAGES = 8, AURA = 2;
     private int integrity = SHIELDING, imgNum = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
-    private Nebukar p;
+    private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
+    private static Nebukar p;
     public Shield(){
-        //cacheImages();
-        //
-        //set p = ^
+        cacheImages();
+    }
+
+    @Override
+    protected void addedToWorld(World world)
+    {
+        int offsetX = world.getWidth();
+        int offsetY = world.getHeight();
+        p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class);
+        System.out.println(p);
     }
 
     /**
@@ -29,18 +38,17 @@ public class Shield extends Items
 
     public void gotShield()
     {
+
         
-        int offsetX = getImage().getWidth() / 2;
-        int offsetY = getImage().getHeight() / 2;
-        p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class); 
         p.hasShield(); //will change players image to shielded
-        Color color = new Color(0,0,0,0);
+        setLocation(p.getX(), p.getY());
         int vertical = p.getImage().getHeight() + 2;
         int horizontal = p.getImage().getWidth() + 2;
         imgNum = IMAGES-1;
         animate();
         GreenfootImage img = new GreenfootImage(horizontal, vertical);
         setImage(img);
+
     }
 
     public void absorbDamage()
@@ -60,12 +68,15 @@ public class Shield extends Items
     public void animate()
     {
         //aura of player shrinking around them upon pickup
-        setLocation(p.getX(), p.getY());
+
         while(imgNum >= 0){
-            setImage(images[imgNum]);
-            imgNum--;
+            if(p.getLeftFacing()){
+                setImage(leftImgs[imgNum]);
+            }else{
+                setImage(images[imgNum]);
+            }imgNum--;
         }
-        //setImage(new GreenfootImage(1,1));
+
     }
 
     public void disintegrate()
@@ -74,15 +85,18 @@ public class Shield extends Items
         p.noShield();
         getWorld().removeObject(this);
     }
-    /* 
+
     private void cacheImages(){
-        //GreenfootImage base = new GreenfootImage("wave.gif");
-        for (imgNum = 0; imgNum < IMAGES; imgNum--){
-            //images[imgNum] = new GreenfootImage(base);
-            int sizeX = p.getImage().getWidth() + AURA * imgNum;
-            int sizeY = p.getImage().getHeight() + AURA * imgNum;
+        GreenfootImage baseR = new GreenfootImage("Shield-Aura-Right.png");
+        GreenfootImage baseL = new GreenfootImage("Shield-Aura-Left.png");
+        for (imgNum = 0; imgNum < IMAGES; imgNum++){
+            images[imgNum] = new GreenfootImage(baseR);
+            leftImgs[imgNum] = new GreenfootImage(baseL);
+            int sizeX = 32 + AURA * imgNum;
+            int sizeY = 40 + AURA * imgNum;
             images[imgNum].scale(sizeX, sizeY);
+            leftImgs[imgNum].scale(sizeX, sizeY);
         }
         imgNum = 0;
-    }*/
+    }
 }

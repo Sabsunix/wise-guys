@@ -28,6 +28,7 @@ public class Level1 extends World
         "  DWWWW                                                           ",
         "CCCCCCCCCCCCCCCCCCR   LBBBBBBBBBBBBCCCCCCCCCCCCR   BBBBBBBBBBBBBBBB",
         "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
     };
     
     
@@ -39,13 +40,14 @@ public class Level1 extends World
     public Level1()
     {    
         
-        super(400, 368, 1, false);
+        super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT;
         createPlatforms(MAP);
         //addPowerUp object code.
         //add background images.
         addObject(thor, 35, 0);
+        //addObject(new Shield(), 360, 280);
     }
     
     /**

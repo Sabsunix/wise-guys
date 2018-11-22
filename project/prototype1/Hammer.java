@@ -3,14 +3,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Hammer here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Nathaniel Larsen
+ * @version 11.22.18
  */
 public class Hammer extends Sprite
 {
     private final int IMAGES = 7, INTERVAL = 4, SPIN = 56;
     private int imgNum = 0, time = 0;
-    private GreenfootImage[] images, leftImages = new GreenfootImage[IMAGES];
+    private GreenfootImage[] images = new GreenfootImage[IMAGES];
+    private GreenfootImage[] leftImages = new GreenfootImage[IMAGES];
     private boolean held = false, launched = false;
     private Nebukar p;
     public Hammer()
@@ -32,7 +33,7 @@ public class Hammer extends Sprite
                 getWorld().removeObject(this);
             }
         }
-        if (held){ 
+        if (held && p != null){ 
             setLocation(p.getX(), p.getY());
         }
     }    
