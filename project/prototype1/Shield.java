@@ -13,7 +13,7 @@ public class Shield extends Items
     private int integrity = SHIELDING, imgNum = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
-    private static Nebukar p;
+    private Nebukar p;
     public Shield(){
         cacheImages();
     }
@@ -21,9 +21,11 @@ public class Shield extends Items
     @Override
     protected void addedToWorld(World world)
     {
-        int offsetX = world.getWidth();
-        int offsetY = world.getHeight();
-        p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class);
+        //int offsetX = world.getWidth();
+        //int offsetY = world.getHeight();
+        //p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class);
+        Level1 level = (Level1) getWorld();
+        p = level.getPlayer();
         System.out.println(p);
     }
 
@@ -60,7 +62,7 @@ public class Shield extends Items
             //integrity -= damage;
         }
         if (integrity == 0){
-            //set player has shield bool = false;
+            p.noShield();
             disintegrate();
         }
     }

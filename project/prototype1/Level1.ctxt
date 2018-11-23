@@ -19,4 +19,6 @@ comment5.text=\r\n\ Triggers\ animation\ of\ a\ doorway\ or\ gateway\ opening/cl
 comment6.params=
 comment6.target=void\ setGatewayImage()
 comment6.text=\r\n\ Initialize\ doorway\ opening\ closing\ animation\r\n
-numComments=7
+comment7.params=
+comment7.target=Nebukar\ getPlayer()
+numComments=8

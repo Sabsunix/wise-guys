@@ -18,8 +18,15 @@ public class Hammer extends Sprite
     {
         cacheImages();
         setImage(images[imgNum]);
+        
     }
-
+    @Override
+    protected void addedToWorld(World world)
+    {
+        Level1 level = (Level1) getWorld();
+        p = level.getPlayer();
+        System.out.println(p);
+    }
     public void act() 
     {
         if (Greenfoot.isKeyDown("z")){
@@ -33,7 +40,6 @@ public class Hammer extends Sprite
                 getWorld().removeObject(this);
             }
         }
-        if (held && p != null){ 
             setLocation(p.getX(), p.getY());
         }
     }    
