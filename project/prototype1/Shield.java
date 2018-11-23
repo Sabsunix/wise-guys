@@ -9,10 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shield extends Items
 {
-    private static final int SHIELDING = 50, IMAGES = 8, AURA = 2;
+    private static final int SHIELDING = 50, IMAGES = 8, AURA = 5;
     private int integrity = SHIELDING, imgNum = 0, protection = 1;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
+    private GreenfootImage endR, endL;
     private Nebukar p;
     public Shield(){
         cacheImages();
@@ -36,9 +37,11 @@ public class Shield extends Items
     {
         if (isTouching(Nebukar.class) && !p.isShielded()){
             gotShield();
+
         }
         if (p.isShielded() ){ 
             animate();
+            
             if (isTouching(Enemy.class)){
                 absorbDamage(protection);// Add your action code here.
             }
@@ -71,8 +74,7 @@ public class Shield extends Items
     public void animate()
     {
         //aura of player shrinking around them upon pickup
-        imgNum = IMAGES-1;
-        //while(imgNum >= 0){
+
         int vertical = p.getImage().getHeight() + 2;
         int horizontal = p.getImage().getWidth() + 2;
         GreenfootImage img = new GreenfootImage(horizontal, vertical);
@@ -81,9 +83,15 @@ public class Shield extends Items
         }else{
             setImage(images[imgNum]);
         }
-        imgNum--;
-        if (imgNum < 0){
-            setImage(img);
+
+        if (imgNum > 0){
+            imgNum--;
+        } else {
+            if (p.getLeftFacing()){
+                setImage(endL);
+            } else {
+                setImage(endR);
+            }
         }
     }
 
@@ -97,14 +105,17 @@ public class Shield extends Items
     private void cacheImages(){
         GreenfootImage baseR = new GreenfootImage("Shield-Aura-Right.png");
         GreenfootImage baseL = new GreenfootImage("Shield-Aura-Left.png");
+        GreenfootImage endL = new GreenfootImage("Shielded-Nebukar-Left2.png");
+        GreenfootImage endR = endL;
+        endR.mirrorHorizontally();
         for (imgNum = 0; imgNum < IMAGES; imgNum++){
             images[imgNum] = new GreenfootImage(baseR);
-            leftImgs[imgNum] = new GreenfootImage(baseL);
             int sizeX = 32 + AURA * imgNum;
             int sizeY = 40 + AURA * imgNum;
             images[imgNum].scale(sizeX, sizeY);
-            leftImgs[imgNum].scale(sizeX, sizeY);
+            leftImgs[imgNum] = images[imgNum];
+            leftImgs[imgNum].mirrorHorizontally();
         }
-        imgNum = 0;
+        imgNum--;
     }
 }
