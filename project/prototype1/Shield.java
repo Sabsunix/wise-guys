@@ -35,7 +35,7 @@ public class Shield extends Items
      */
     public void act() 
     {
-        absorbDamage();// Add your action code here.
+        //absorbDamage();// Add your action code here.
     }
 
     public void gotShield()
@@ -50,17 +50,17 @@ public class Shield extends Items
         animate();
         GreenfootImage img = new GreenfootImage(horizontal, vertical);
         setImage(img);
-
+        setLocation(p.getX(), p.getY());
     }
 
     public void absorbDamage()
     {
-        while (p.isShielded()){
-            setLocation(p.getX(), p.getY());
+        //while (p.isShielded()){
+            
             //if player would take damage
             //negate player's damage
             //integrity -= damage;
-        }
+       // }
         if (integrity == 0){
             p.noShield();
             disintegrate();

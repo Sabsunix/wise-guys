@@ -40,6 +40,7 @@ public class Hammer extends Sprite
                 getWorld().removeObject(this);
             }
         }
+        if (held){ 
             setLocation(p.getX(), p.getY());
         }
     }    
