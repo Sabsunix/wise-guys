@@ -37,12 +37,14 @@ public class Hammer extends Sprite
             animate();
             if (getOneIntersectingObject(null) != null){
                 //Greenfoot.playSound("thunk.wav")
+                
                 getWorld().removeObject(this);
             }
         }
         if (held){ 
             setLocation(p.getX(), p.getY());
         }
+        
     }    
 
     /** Fly through the air */

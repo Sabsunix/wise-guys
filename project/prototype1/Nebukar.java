@@ -11,6 +11,7 @@ public class Nebukar extends Sprite
 {
     private static final double MOVE_SPEED = 2.50;
     private static final double GRAVITY = 0.5;
+    private static final int MAX_HEALTH = 100;
     private static final int RIGHT = 0;
     private static final int LEFT = 0;
     private static boolean facingLeft;
@@ -30,6 +31,7 @@ public class Nebukar extends Sprite
         facingLeft = true;
         shielded  = false;
         hasKey = false;
+        health = MAX_HEALTH;
     }
 
     /**

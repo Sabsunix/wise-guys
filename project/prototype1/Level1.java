@@ -46,7 +46,7 @@ public class Level1 extends World
         //addPowerUp object code.
         //add background images.
         addObject(thor, 35, 0);
-        //addObject(new Shield(), 360, 280);
+        addObject(new Shield(), 360, 280);
     }
 
     /**

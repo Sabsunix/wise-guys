@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author William Craig 
  * @version 11/20/18
  */
-public class Enemy_bouncing extends Sprite
+public class Enemy_bouncing extends Enemy
 {
     /**
      * Act - do whatever the Enemy_bouncing wants to do. This method is called whenever

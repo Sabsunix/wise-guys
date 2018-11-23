@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author William Craig
  * @version 11/20/18
  */
-public class Enemy_projectile extends Sprite
+public class Enemy_projectile extends Enemy
 {
     /**
      * Act - do whatever the Enemy_projectile wants to do. This method is called whenever
@@ -21,4 +21,9 @@ public class Enemy_projectile extends Sprite
             world.removeObject(this);
         }
     }    
+    @Override
+    public void move()
+    {
+        
+    }
 }

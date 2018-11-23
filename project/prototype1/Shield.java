@@ -10,7 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shield extends Items
 {
     private static final int SHIELDING = 50, IMAGES = 8, AURA = 2;
-    private int integrity = SHIELDING, imgNum = 0;
+    private int integrity = SHIELDING, imgNum = 0, protection = 1;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
     private Nebukar p;
@@ -26,7 +26,6 @@ public class Shield extends Items
         //p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class);
         Level1 level = (Level1) getWorld();
         p = level.getPlayer();
-        System.out.println(p);
     }
 
     /**
@@ -35,32 +34,34 @@ public class Shield extends Items
      */
     public void act() 
     {
-        //absorbDamage();// Add your action code here.
+        if (isTouching(Nebukar.class) && !p.isShielded()){
+            gotShield();
+        }
+        if (p.isShielded() ){ 
+            animate();
+            if (isTouching(Enemy.class)){
+                absorbDamage(protection);// Add your action code here.
+            }
+        }
     }
 
     public void gotShield()
     {
 
-        
         p.hasShield(); //will change players image to shielded
-        setLocation(p.getX(), p.getY());
-        int vertical = p.getImage().getHeight() + 2;
-        int horizontal = p.getImage().getWidth() + 2;
-        imgNum = IMAGES-1;
-        animate();
-        GreenfootImage img = new GreenfootImage(horizontal, vertical);
-        setImage(img);
         setLocation(p.getX(), p.getY());
     }
 
-    public void absorbDamage()
+    public void absorbDamage(int damage)
     {
         //while (p.isShielded()){
-            
-            //if player would take damage
-            //negate player's damage
-            //integrity -= damage;
-       // }
+
+        //if player would take damage
+        //negate player's damage
+        int negation = p.getHealth() + damage;
+        p.setHealth(negation);
+        integrity -= damage;
+        // }
         if (integrity == 0){
             p.noShield();
             disintegrate();
@@ -70,15 +71,20 @@ public class Shield extends Items
     public void animate()
     {
         //aura of player shrinking around them upon pickup
-
-        while(imgNum >= 0){
-            if(p.getLeftFacing()){
-                setImage(leftImgs[imgNum]);
-            }else{
-                setImage(images[imgNum]);
-            }imgNum--;
+        imgNum = IMAGES-1;
+        //while(imgNum >= 0){
+        int vertical = p.getImage().getHeight() + 2;
+        int horizontal = p.getImage().getWidth() + 2;
+        GreenfootImage img = new GreenfootImage(horizontal, vertical);
+        if(p.getLeftFacing()){
+            setImage(leftImgs[imgNum]);
+        }else{
+            setImage(images[imgNum]);
         }
-
+        imgNum--;
+        if (imgNum < 0){
+            setImage(img);
+        }
     }
 
     public void disintegrate()
