@@ -12,6 +12,13 @@ Subsystem Classes
 -----------------
 World class (Level1) = Nicholas Anderson
 Platform/platform-subclasses = Nicholas Anderson
+Base class = Nick Anderson
+Center Class = Nick Anderson
+Door class = Nick Anderson
+    object collision method = checkKeyDoor()
+Left Class = Nick Anderson
+Right Class = Nick Anderson
+Wall Class = Nick Anderson
 
 Items/item-subclasses = Nathaniel Larsen
 Sprite/Hammer/Shield =  Nathaniel Larsen
