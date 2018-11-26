@@ -2,6 +2,18 @@
 comment0.target=Door
 comment0.text=\r\n\ Image\ of\ a\ door\ for\ level\ map.\ will\ also\ open\ and\ close\r\n\ IMAGE\ \=\ door.png\r\n\r\n\ @author\ Nicholas\ Anderson\r\n\ @version\ 1.0,\ November\ 18,\ 2018\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ animation\ of\ door\ opening\ closing?\r\n
-numComments=2
+comment1.target=Door()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ animation\ of\ door\ opening\ closing?\r\n
+comment3.params=
+comment3.target=void\ initializeImages()
+comment4.params=
+comment4.target=void\ checkKeyDoor()
+comment4.text=\r\n\ method\ to\ check\ if\ player\ intersects\ door\ holding\ key\ \=\ true\r\n\ next\ level\r\n
+comment5.params=
+comment5.target=void\ doorOpens()
+comment6.params=
+comment6.target=void\ nextLevel()
+comment6.text=\r\n\ method\ to\ change\ player\ to\ next\ level\r\n
+numComments=7
