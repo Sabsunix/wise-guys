@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Hammer extends Sprite
 {
     private final int IMAGES = 7, INTERVAL = 4, SPIN = 56;
+    private static final double GRAVITY = 0.5, MAX_VEL = 10;
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImages = new GreenfootImage[IMAGES];
@@ -51,14 +52,24 @@ public class Hammer extends Sprite
     public void launch()
     {
         //get player's direction, facing 
-        //if (p.getLeftFacing())
-        //setVelocity(-2.0 + p.getVelocityX, -0.27)
-        //else 
+        if (p.getLeftFacing()){
+        setVelocityX(-2.0 + p.getVelocityX());
+        setVelocityY(-0.27);
+    }else 
         //setVelocity(2.0 + p.getVelocityX, -0.27)
         //move();
         //p.getDirection(), setVelocity(), & move() -needed in sprite class ^^
         launched = true;
         held = false;
+    }
+    /**
+     * Apply gravity when the sprite is jumping or falling.
+     */
+    public void applyGravity()
+    {
+        double velocityY = getVelocityY() + GRAVITY; // add gravity
+        if (velocityY > MAX_VEL) velocityY = MAX_VEL; // limit velocity
+        setVelocityY(velocityY);  // save current velocity
     }
 
     /**
