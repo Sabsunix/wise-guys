@@ -51,7 +51,7 @@ public class Door extends Platform
         key = (Nebukar) getOneIntersectingObject(Nebukar.class);
         if(key != null)
         {
-            if(key.hasKey = true)
+            if(key.hasKey == true)
             {
                 doorOpens();
                 nextLevel();
