@@ -15,22 +15,23 @@ public class Level1 extends World
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
     private static final String[] MAP = 
-        {
-            "                                                                   ",
-            "                                                                   ",
-            "                                                                   ",
-            "                                                                   ",
-            "                                                                   ",
-            "                                                                   ",
-            "  W W W                                                            ",
-            "  WWWWW                                                            ",
-            "  WWWWW                                                            ",
-            "  DWWWW                                                           ",
-            "CCCCCCCCCCCCCCCCCCR   LBBBBBBBBBBBBCCCCCCCCCCCCR   BBBBBBBBBBBBBBBB",
-            "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-            "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-        };
-
+    {
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                              W W W",
+        "                                                              WWWWW",
+        "        S                                                     WWWWW",
+        "      E                     W   E    K W   E            E   P DWWWW",
+        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
+        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+    };
+    
+    
     
     /**
      * Constructor for objects of class Level1.
@@ -38,7 +39,7 @@ public class Level1 extends World
      */
     public Level1()
     {    
-
+        
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT;
@@ -46,13 +47,13 @@ public class Level1 extends World
         //addPowerUp object code.
         //add background images.
         addObject(thor, 35, 0);
-        addObject(new Shield(), 360, 280);
+        //addObject(new Shield(), 360, 280);
     }
-
+    
     /**
      * Method to allow scrolling background to move through level1.
      */
-    public void scrollHorizontal(double dx)
+        public void scrollHorizontal(double dx)
     {
         List<Actor> actors = getObjects(null);
         for (Actor a : actors)
@@ -61,8 +62,8 @@ public class Level1 extends World
             a.setLocation(moveX, a.getY());
         }
     }
-
-    /**
+    
+        /**
      * Add a row of tiles to the world.
      *
      * @param y The row number in the MAP grid.
@@ -99,14 +100,30 @@ public class Level1 extends World
             {
                 addObject(new Door(), tileX, tileY);
             }
+            else if (tileType == 'K')
+            {
+                addObject(new Key(), tileX, tileY);
+            }
+            else if (tileType == 'P')
+            {
+                addObject(new Potion(), tileX, tileY);
+            }
+            else if (tileType == 'S')
+            {
+                addObject( new Shield(), tileX, tileY);
+            }
+            else if (tileType == 'E')
+            {
+                addObject( new Enemy_walking(), tileX, tileY);
+            }
             else if (tileType != ' ')
             {
                 System.out.println("Wrong tile type: " + tileType);
             }
         }
     }
-
-    /**
+    
+      /**
      * Create and arrange platforms in the world.
      */
     private void createPlatforms(String[] MAP)
@@ -116,25 +133,9 @@ public class Level1 extends World
             makeMapRow(y, MAP);
         }
     }
-
-    /**
-     * Triggers animation of a doorway or gateway opening/closing
-     */
-    private void gatewayOpen()
-    {
-
-    }
-
-    /**
-     * Initialize doorway opening closing animation
-     */
-    private void setGatewayImage()
-    {
-
-    }
-    public Nebukar getPlayer()
+ 
+     public Nebukar getPlayer()
     {
         return thor;
     }
-
 }
