@@ -14,22 +14,22 @@ public class Level1 extends World
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
-    private static final String[] MAP = 
-    {
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                              W W W",
-        "                                                              WWWWW",
-        "        S                                                     WWWWW",
-        "      E                     W   E    K W   E            E   P DWWWW",
-        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-    };
+    // private static final String[] MAP = 
+    // {
+        // "                                                                   ",
+        // "                                                                   ",
+        // "                                                                   ",
+        // "                                                                   ",
+        // "                                                                   ",
+        // "                                                                   ",
+        // "                                                              W W W",
+        // "                                                              WWWWW",
+        // "                S                                             WWWWW",
+        // "             E              W   E    K W   E            E   P DWWWW",
+        // "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
+        // "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+        // "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+    // };
     
     
     
@@ -43,10 +43,10 @@ public class Level1 extends World
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT;
-        createPlatforms(MAP);
+       // createPlatforms(MAP);
         //addPowerUp object code.
         //add background images.
-        addObject(thor, 35, 0);
+        //addObject(thor, getWidth()/2, 0);
         //addObject(new Shield(), 360, 280);
     }
     
@@ -126,12 +126,13 @@ public class Level1 extends World
       /**
      * Create and arrange platforms in the world.
      */
-    private void createPlatforms(String[] MAP)
+    protected void createPlatforms(String[] MAP)
     {
         for (int y = 0; y < MAP.length; y++)
         {
             makeMapRow(y, MAP);
         }
+        addObject(thor, getWidth()/2, 0);
     }
  
      public Nebukar getPlayer()
