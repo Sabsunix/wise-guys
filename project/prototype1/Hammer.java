@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Hammer extends Sprite
 {
     private final int IMAGES = 7, INTERVAL = 4, SPIN = 56;
-    private static final double GRAVITY = 0.5, MAX_VEL = 10;
+    private static final double GRAVITY = 0.05, MAX_VEL = 10;
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImages = new GreenfootImage[IMAGES];
@@ -19,8 +19,9 @@ public class Hammer extends Sprite
     {
         cacheImages();
         setImage(images[imgNum]);
-        
+
     }
+
     @Override
     protected void addedToWorld(World world)
     {
@@ -28,6 +29,7 @@ public class Hammer extends Sprite
         p = level.getPlayer();
         System.out.println(p);
     }
+
     public void act() 
     {
         if (Greenfoot.isKeyDown("z")){
@@ -38,30 +40,32 @@ public class Hammer extends Sprite
             animate();
             if (getOneIntersectingObject(null) != null){
                 //Greenfoot.playSound("thunk.wav")
-                
+
                 getWorld().removeObject(this);
             }
+            move();
+            applyGravity();
         }
         if (held){ 
             setLocation(p.getX(), p.getY());
         }
-        
+
     }    
 
     /** Fly through the air */
     public void launch()
     {
-        //get player's direction, facing 
         if (p.getLeftFacing()){
-        setVelocityX(-2.0 + p.getVelocityX());
-        setVelocityY(-0.27);
-    }else 
-        //setVelocity(2.0 + p.getVelocityX, -0.27)
-        //move();
-        //p.getDirection(), setVelocity(), & move() -needed in sprite class ^^
+            setVelocityX(-2.0 + p.getVelocityX());
+            setVelocityY(-1);
+        }else{ 
+            setVelocityX(2.0 + p.getVelocityX());
+            setVelocityY(-1);
+        }
         launched = true;
         held = false;
     }
+
     /**
      * Apply gravity when the sprite is jumping or falling.
      */
