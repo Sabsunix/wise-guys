@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Hammer extends Sprite
 {
-    private final int IMAGES = 7, INTERVAL = 4, SPIN = 56;
+    private final int IMAGES = 7, INTERVAL = 4, SPIN = 52;
     private static final double GRAVITY = 0.05, MAX_VEL = 10;
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
@@ -27,7 +27,6 @@ public class Hammer extends Sprite
     {
         Level1 level = (Level1) getWorld();
         p = level.getPlayer();
-        System.out.println(p);
     }
 
     public void act() 

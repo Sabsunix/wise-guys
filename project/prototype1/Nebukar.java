@@ -88,7 +88,7 @@ public class Nebukar extends Sprite
      */
     public void stopMoving()
     {
-
+        setVelocityX(0);
     }
 
     /**
