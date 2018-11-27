@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Platform
-comment0.text=\r\n\ 2d\ surface\ platform\ character\ moves\ on.\ IMAGE\=Untitled.png\r\n\ \r\n\ @author\ Nicholas\ Anderson\ \r\n\ @version\ V1.0\r\n\ @date\ November\ 15,\ 2018\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ image\ place\ holder\ class\r\n
-numComments=2
