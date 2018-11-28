@@ -12,16 +12,17 @@ public class Nebukar extends Sprite
     private static final double MOVE_SPEED = 2.50;
     private static final double GRAVITY = 0.5;
     private static final int MAX_HEALTH = 100;
-    private static final int RIGHT = 0;
-    private static final int LEFT = 0;
+    //private static final int RIGHT = 0;
+    //private static final int LEFT = 1;
+
     private static boolean facingLeft;
     private boolean canJump; // Jumping is allowed when true
-    private static GreenfootImage faceRight;
-    private static GreenfootImage faceLeft;
 
+    
     private int health;
     private boolean shielded;
     public boolean hasKey;
+     
     /**
      * Constructor for the main character
      */
@@ -39,22 +40,30 @@ public class Nebukar extends Sprite
      */
     public void act() 
     {
+
+        applyGravity();
+        checkVertical();
         keyPress();
-        jump();
-        attack();
-        stopMoving();
+        move();
+        hamCheck();
+        //setImage();
+        //attack();
     }    
 
     public void keyPress()    
     {
         if (Greenfoot.isKeyDown("right"))
         {
-            move(2);
+            setVelocityX(2);            
+            setImage("Nebukar-Right.png");
+
             facingLeft = false;
         }
         else if (Greenfoot.isKeyDown("left"))
         {
-            move(-2);
+            setVelocityX(-2);            
+            setImage("Nebukar-Left.png");
+
             facingLeft = true;
         }
         else
@@ -67,12 +76,130 @@ public class Nebukar extends Sprite
         }
     }
 
+    public void applyGravity()
+    {
+        double velocityY = getVelocityY() + GRAVITY; // add gravity
+        setVelocityY(velocityY);  // save current velocity
+    }
+
     /**
      * Propels Nebukar upwards.
      */
     public void jump()
     {
+        if (canJump)
+        {
+            setVelocityY(-12);
+            canJump= false;
+        }
 
+    }
+
+    /**
+     *Centers cam on Player and handles movement.
+     *move method imported from Player class to allow player to stay centered
+     * while the world and all actors scroll left & right accordingly with user
+     * input movement.
+     * 
+     * -requires scrollHorizontal to be implemented in world class
+     */
+
+    public void move()
+    {
+        super.move();
+        double dx = getVelocityX();
+        Level1 w = (Level1) getWorld();
+        if (w == null || dx == 0)
+        {
+            return;
+        }
+        w.scrollHorizontal(dx);
+        setLocation(w.getWidth() / 2, getY()); // stay in horizontal center
+    }
+
+    /**
+     * checks for vertical collision
+     */
+    public void checkVertical()
+    {
+        // Calculate distance sprite will move vertically
+        double velocityY = getVelocityY();
+        int lookY = 0;
+        if (velocityY > 0)
+        {
+            lookY = (int) (velocityY + GRAVITY + getHeight() / 2);
+        }
+        else
+        {
+            lookY = (int) (velocityY + GRAVITY - getHeight() / 2);
+        }
+        // Check for vertical collision this cycle
+        Actor a = getOneObjectAtOffset(0, lookY, Platform.class);
+        if (a == null) {
+            // No collision this cycle
+            applyGravity();
+            canJump = false; // in case of falling off an edge
+        }
+        else
+        {
+            // Collision detected
+            moveToContactVertical(a);
+            if (velocityY > 0)
+            {
+                // Player has landed
+                canJump = true;
+            }
+            setVelocityY(0.0);
+        }
+    }
+
+    /**
+     * contact
+     */
+    public void moveToContactVertical(Actor target)
+    {
+        int h2 = (target.getImage().getHeight() + getImage().getHeight()) / 2;
+        int newY = 0;
+
+        if (target.getY() > getY())
+        {
+            newY = target.getY() - h2;
+        }
+        else
+        {
+            newY = target.getY() + h2;
+        }
+
+        setLocation(getX(), newY);
+
+    }
+
+    public void hamCheck()
+    {
+        if (isTouching(Hammer.class) )  
+        {
+            //Hammer.gotHammer();
+        }
+    }
+
+    /**
+     * Returns the height of this Sprite's image.
+     *
+     * @return Height of the current image.
+     */
+    public int getHeight()
+    {
+        return getImage().getHeight();
+    }
+
+    /**
+     * Returns the width of this Sprite's image.
+     *
+     * @return Width of the current image.
+     */
+    public int getWidth()
+    {
+        return getImage().getWidth();
     }
 
     /**
@@ -89,14 +216,6 @@ public class Nebukar extends Sprite
     public void stopMoving()
     {
         setVelocityX(0);
-    }
-
-    /**
-     * Centers camera on Nebukar.
-     */
-    public void checkCam() 
-    {
-
     }
 
     /**
@@ -148,25 +267,5 @@ public class Nebukar extends Sprite
     public boolean isShielded(){
         return shielded;
     }
-    
-    /**
-    * move method imported from Player class to allow player to stay centered
-    * while the world and all actors scroll left & right accordingly with user
-    * input movement.
-    * 
-    * -requires scrollHorizontal to be implemented in world class
-    */
-   
-    public void move()
-    {
-        super.move();
-        double dx = getVelocityX();
-        Level1 w = (Level1) getWorld();
-        if (w == null || dx == 0)
-        {
-            return;
-        }
-         w.scrollHorizontal(dx);
-        setLocation(w.getWidth() / 2, getY()); // stay in horizontal center
-    }
+
 }
