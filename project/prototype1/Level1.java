@@ -47,7 +47,7 @@ public class Level1 extends World
         //addPowerUp object code.
         //add background images.
         //addObject(thor, getWidth()/2, 0);
-        //addObject(new Shield(), 360, 280);
+        //addObject(new Shield(), 360, 280); 
     }
     
     /**
@@ -132,7 +132,7 @@ public class Level1 extends World
         {
             makeMapRow(y, MAP);
         }
-        addObject(thor, getWidth()/2, 0);
+        addObject(thor, getWidth()/2, getHeight()/2);
     }
  
      public Nebukar getPlayer()
@@ -140,3 +140,4 @@ public class Level1 extends World
         return thor;
     }
 }
+
