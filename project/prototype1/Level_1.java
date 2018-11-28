@@ -10,19 +10,19 @@ public class Level_1 extends Level1
 {
         private static final String[] MAP = 
     {
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                              W W W",
-        "                                                              WWWWW",
-        "                S                                             WWWWW",
-        "             E              W   E    K W   E            E   P DWWWW",
-        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+        "                                                                    ",
+        "                                                                    ",
+        "                                                                    ",
+        "                                                                    ",
+        "                                                                    ",
+        "                                                                    ",
+        "                                                              W W W W",
+        "                                                              WWWWWWW",
+        "                S                                             WWWWWWW",
+        "             E              W   E    K W   E            E   P DWWWWWW",
+        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCC",
+        "BBBBBBBBBBBBBBBBBB     BBBBBBBBBBBBBBBBBBBBBBBB     BBBBBBBBBBBBBBBBB",
+        "BBBBBBBBBBBBBBBBBB     BBBBBBBBBBBBBBBBBBBBBBBB     BBBBBBBBBBBBBBBBB",
     };
     
 
