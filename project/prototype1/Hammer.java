@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hammer here.
+ * A hammer for Nebukar to pickup and throw.
  * 
  * @author Nathaniel Larsen
  * @version 11.22.18
+ * 
+ * img credit: 
+ * sound:
  */
 public class Hammer extends Sprite
 {
@@ -37,7 +40,7 @@ public class Hammer extends Sprite
         }
         if (launched){
             animate();
-            if (getOneIntersectingObject(null) != null){
+            if (getOneIntersectingObject(null) != null&& !isTouching(Nebukar.class)){
                 //Greenfoot.playSound("thunk.wav")
 
                 getWorld().removeObject(this);
@@ -46,7 +49,13 @@ public class Hammer extends Sprite
             applyGravity();
         }
         if (held){ 
-            setLocation(p.getX(), p.getY());
+            if(p.getLeftFacing()) {
+                setLocation(p.getX() - getImage().getWidth() / 2, p.getY());
+                setImage(images[IMAGES - 1]);
+            } else {
+                setLocation(p.getX() + getImage().getWidth() / 2, p.getY());
+                setImage(images[IMAGES / 2]);
+            }
         }
 
     }    
@@ -80,10 +89,9 @@ public class Hammer extends Sprite
      * its angle changes and Thor makes an announcement     
      */
     public void gotHammer(){
-        setImage(images[IMAGES - 1]);
+
         Greenfoot.playSound("hammer.wav");
         held = true;
-        p = (Nebukar) getOneIntersectingObject(Nebukar.class);
     }
 
     private void cacheImages(){

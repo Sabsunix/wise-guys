@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Potion here.
+ * A potion to heal Nebukar
  * 
  * @author Nathaniel Larsen
  * @version 11/16/18
+ * 
+ * img credit: zeldapedia
  */
 public class Potion extends Items
 {
