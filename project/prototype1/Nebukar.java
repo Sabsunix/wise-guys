@@ -14,7 +14,7 @@ public class Nebukar extends Sprite
     private static final int MAX_HEALTH = 100;
     private static final int RIGHT = 0;
     private static final int LEFT = 0;
-    private static boolean facingLeft;
+    private boolean facingLeft;
     private boolean canJump; // Jumping is allowed when true
     private static GreenfootImage faceRight;
     private static GreenfootImage faceLeft;

@@ -1,11 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * A shield for the player to pickup
- * (needs reference to player to work)
+ * A shield to protect Nebukar
  * 
  * @author Nathaniel Larsen
  * @version 11/16/18
+ * 
+ * img credit: 
  */
 public class Shield extends Items
 {
