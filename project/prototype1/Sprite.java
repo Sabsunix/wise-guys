@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Sprite class for movers
  * 
- * @author Nathaniel
+ * @author Nathaniel and Ben Smith
  * @version Prototype
  */
 public abstract class Sprite extends Actor

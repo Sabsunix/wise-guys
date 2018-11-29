@@ -18,13 +18,16 @@ public class Nebukar extends Sprite
     private static boolean facingLeft;
     private boolean canJump; // Jumping is allowed when true
 
-    
+    //Array Cache    
+    private static final int MOVECOUNT = 0; //sets animmation counter to 0
+    private static GreenfootImage[] image;
+
     private int health;
     private boolean shielded;
     public boolean hasKey;
-     
+
     /**
-     * Constructor for the main character
+     * Constructor for the main character: Neb
      */
     public Nebukar()
     {
@@ -33,6 +36,17 @@ public class Nebukar extends Sprite
         shielded  = false;
         hasKey = false;
         health = MAX_HEALTH;
+
+        initializeImages();
+
+        //placeholders for images. will have potentially 6 images.
+        image = new GreenfootImage[2];
+        image[0] = new GreenfootImage ("Nebukar-Right.png");
+        image[1] = new GreenfootImage ("Nebukar-Left.png");
+        // image[2] = new GreenfootImage ("");
+        // image[3] = new GreenfootImage ("");
+        // image[4] = new GreenfootImage ("");
+        // image[5] = new GreenfootImage ("");
     }
 
     /**
@@ -46,9 +60,20 @@ public class Nebukar extends Sprite
         keyPress();
         move();
         hamCheck();
+
         //setImage();
         //attack();
     }    
+
+    public void pShield()
+    {
+        if (isTouching (Shield.class))
+        {
+            getWorld().removeObject(this);
+            shielded  = true;
+            Greenfoot.playSound("sound1.wav");
+        }
+    }
 
     public void keyPress()    
     {
@@ -92,6 +117,14 @@ public class Nebukar extends Sprite
             setVelocityY(-12);
             canJump= false;
         }
+
+    }
+
+    /**
+     * images 
+     */
+    public void initializeImages()
+    {
 
     }
 
@@ -216,14 +249,6 @@ public class Nebukar extends Sprite
     public void stopMoving()
     {
         setVelocityX(0);
-    }
-
-    /**
-     * Animates run.
-     */
-    public void animate()
-    {
-
     }
 
     /**
