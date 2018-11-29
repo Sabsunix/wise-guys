@@ -16,7 +16,8 @@ public class Hammer extends Sprite
     private int imgNum = 0, time = 0;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImages = new GreenfootImage[IMAGES];
-    private boolean held = false, launched = false;
+    private static boolean held = false;
+    private boolean launched = false;
     private Nebukar p;
     public Hammer()
     {
@@ -34,21 +35,22 @@ public class Hammer extends Sprite
 
     public void act() 
     {
-        if (Greenfoot.isKeyDown("z")){
-            launch();
-            held = false;
-        }
+
         if (launched){
             animate();
-            if (getOneIntersectingObject(null) != null&& !isTouching(Nebukar.class)){
+            if (getOneIntersectingObject(null) != null && !isTouching(Nebukar.class)){
                 //Greenfoot.playSound("thunk.wav")
-
+                p.unarmed();
                 getWorld().removeObject(this);
             }
             move();
             applyGravity();
         }
         if (held){ 
+            if (Greenfoot.isKeyDown("z")){
+                launch();
+                held = false;
+            }
             if(p.getLeftFacing()) {
                 setLocation(p.getX() - getImage().getWidth() / 2, p.getY());
                 setImage(images[IMAGES - 1]);
@@ -118,5 +120,8 @@ public class Hammer extends Sprite
             imgNum++;
         }
         time++;
+    }
+    public static void dropped(){
+        held = false;
     }
 }

@@ -23,7 +23,7 @@ public class Nebukar extends Sprite
     private static GreenfootImage[] image;
 
     private int health;
-    private boolean shielded;
+    private boolean shielded, armed;
     public boolean hasKey;
 
     /**
@@ -35,6 +35,7 @@ public class Nebukar extends Sprite
         facingLeft = true;
         shielded  = false;
         hasKey = false;
+        armed = false;
         health = MAX_HEALTH;
 
         initializeImages();
@@ -70,7 +71,7 @@ public class Nebukar extends Sprite
     {
         if (isTouching (Shield.class))
         {
-            
+
             //shielded  = true;
             Greenfoot.playSound("sound1.wav");
         }
@@ -80,14 +81,14 @@ public class Nebukar extends Sprite
     {
         if (Greenfoot.isKeyDown("right"))
         {
-            setVelocityX(2);            
+            setVelocityX(MOVE_SPEED);            
             setImage("Nebukar-Right.png");
 
             facingLeft = false;
         }
         else if (Greenfoot.isKeyDown("left"))
         {
-            setVelocityX(-2);            
+            setVelocityX(-MOVE_SPEED);            
             setImage("Nebukar-Left.png");
 
             facingLeft = true;
@@ -210,9 +211,15 @@ public class Nebukar extends Sprite
 
     public void hamCheck()
     {
-        if (isTouching(Hammer.class) )  
+        Hammer h = (Hammer) getOneIntersectingObject(Hammer.class);
+        if (h != null)  
         {
-            //Hammer.gotHammer();
+            if (armed == false)
+            {
+                h.gotHammer();
+                armed = true;
+            }
+
         }
     }
 
@@ -235,6 +242,7 @@ public class Nebukar extends Sprite
     {
         return getImage().getWidth();
     }
+
     public boolean getLeftFacing()
     {
         return facingLeft;
@@ -255,6 +263,10 @@ public class Nebukar extends Sprite
 
     public void noShield(){
         shielded = false;
+        //back to base image
+    }
+    public void unarmed(){
+        armed = false;
         //back to base image
     }
 
@@ -293,5 +305,4 @@ public class Nebukar extends Sprite
 
     }
 
-    
 }

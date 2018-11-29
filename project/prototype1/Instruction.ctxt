@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Instruction
+comment0.text=\r\n\ Text\ instructions\ for\ the\ player\r\n\ \r\n\ @author\ Cole\ Tomaro\r\n\ @version\ 11/19/18\r\n
+comment1.params=
+comment1.target=Instruction()
+comment2.params=message\ size
+comment2.target=Instruction(java.lang.String,\ int)
+numComments=3

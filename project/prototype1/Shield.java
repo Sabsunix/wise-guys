@@ -37,16 +37,16 @@ public class Shield extends Items
      */
     public void act() 
     {
-        
+
         if (p == null){
-            
+
             p = (Nebukar) getOneIntersectingObject(Nebukar.class);
-            //gotShield();
 
         } else { 
             animate();
+            p.hasShield();
             setLocation(p.getX(), p.getY());
-            
+
             if (isTouching(Enemy.class)){
                 //System.out.println(p.getX() + " : " + p.getY());
                 absorbDamage(dmg);// Add your action code here.
@@ -100,7 +100,7 @@ public class Shield extends Items
                 setImage(endR);
             }
         }
-        
+        //gotShield();
     }
 
     public void disintegrate()

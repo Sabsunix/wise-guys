@@ -17,16 +17,21 @@ public class Enemy extends Sprite
         if(isTouching(Hammer.class)){
             Greenfoot.playSound("squish_placeholder.wav");
             getWorld().removeObject(this);
-        }
-        if(isTouching(Shield.class)){
-            Actor Shield = getOneIntersectingObject(Shield.class);
+        } else if(isTouching(Shield.class)){
+            Actor shield = getOneIntersectingObject(Shield.class);
             Greenfoot.playSound("squish_placeholder.wav");
-            //getWorld().removeObject(Shield); //commented out because the game would crash
+            getWorld().removeObject(shield); //commented out because the game would crash
             getWorld().removeObject(this);
-        }
-        else if(isTouching(Nebukar.class)){
-            Actor Nebukar = getOneIntersectingObject(Nebukar.class);
-            getWorld().removeObject(Nebukar);
+        } else if(isTouching(Nebukar.class)){
+            
+            Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
+            if(!nebukar.isShielded()){
+                getWorld().removeObject(nebukar);
+                Hammer.dropped();
+            } else {
+                nebukar.noShield();
+            }
+            
         }
     }
 }
