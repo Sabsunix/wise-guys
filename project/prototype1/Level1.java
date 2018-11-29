@@ -14,22 +14,22 @@ public class Level1 extends World
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
-    // private static final String[] MAP = 
-    // {
-        // "                                                                   ",
-        // "                                                                   ",
-        // "                                                                   ",
-        // "                                                                   ",
-        // "                                                                   ",
-        // "                                                                   ",
-        // "                                                              W W W",
-        // "                                                              WWWWW",
-        // "                S                                             WWWWW",
-        // "             E              W   E    K W   E            E   P DWWWW",
-        // "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
-        // "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-        // "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-    // };
+     private static final String[] MAP = 
+     {
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                                   ",
+        "                                                              W W W",
+        "                                                              WWWWW",
+        "                S                                             WWWWW",
+        "             E              W   E    K W   E            E   P DWWWW",
+        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
+        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
+     };
     
     
     

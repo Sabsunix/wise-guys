@@ -5,11 +5,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * the arrow keys and spacebar.
  * 
  * @author (Ben Smith and Ed Parrish) 
- * @version Prototype
+ * @version 1.1
  */
 public class Nebukar extends Sprite
 {
-    private static final double MOVE_SPEED = 2.50;
+    private static final double MOVE_SPEED = 3.50;
     private static final double GRAVITY = 0.5;
     private static final int MAX_HEALTH = 100;
     //private static final int RIGHT = 0;
@@ -60,6 +60,7 @@ public class Nebukar extends Sprite
         keyPress();
         move();
         hamCheck();
+        pShield();
 
         //setImage();
         //attack();
@@ -69,8 +70,8 @@ public class Nebukar extends Sprite
     {
         if (isTouching (Shield.class))
         {
-            getWorld().removeObject(this);
-            shielded  = true;
+            
+            //shielded  = true;
             Greenfoot.playSound("sound1.wav");
         }
     }
@@ -114,7 +115,7 @@ public class Nebukar extends Sprite
     {
         if (canJump)
         {
-            setVelocityY(-12);
+            setVelocityY(-16);
             canJump= false;
         }
 
@@ -171,7 +172,7 @@ public class Nebukar extends Sprite
         if (a == null) {
             // No collision this cycle
             applyGravity();
-            canJump = false; // in case of falling off an edge
+            canJump = false; 
         }
         else
         {
@@ -234,6 +235,32 @@ public class Nebukar extends Sprite
     {
         return getImage().getWidth();
     }
+    public boolean getLeftFacing()
+    {
+        return facingLeft;
+    }
+
+    public int getHealth(){
+        return health;
+    }
+
+    public void setHealth(int newHealth){
+        health = newHealth;
+    }
+
+    public void hasShield(){
+        shielded = true;
+        //set images to shielded versions
+    }
+
+    public void noShield(){
+        shielded = false;
+        //back to base image
+    }
+
+    public boolean isShielded(){
+        return shielded;
+    }
 
     /**
      * Attacks with a mighty weapon!
@@ -266,31 +293,5 @@ public class Nebukar extends Sprite
 
     }
 
-    public boolean getLeftFacing()
-    {
-        return facingLeft;
-    }
-
-    public int getHealth(){
-        return health;
-    }
-
-    public void setHealth(int newHealth){
-        health = newHealth;
-    }
-
-    public void hasShield(){
-        shielded = true;
-        //set images to shielded versions
-    }
-
-    public void noShield(){
-        shielded = false;
-        //back to base image
-    }
-
-    public boolean isShielded(){
-        return shielded;
-    }
-
+    
 }
