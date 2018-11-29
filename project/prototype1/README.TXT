@@ -32,10 +32,12 @@ Nebukar file has method for initialize images and cache array; images not yet se
 //Sound is temporary and plays when Nebukar touches the shield. 
 -------------------------------------
 
-William Craig's classes: (?%) 
+William Craig's classes: (30-45%) 
 Enemy_walking, 
 Enemy_shooting, 
 Enemy_bouncing and Enemy_projectile
+Enemy_walking file has method for initialize images and image arrays, but no images are set from it yet
+sound is played in all classes from superclass, and is a sound I copied from Platformer6 to use as a placeholder.
 -------------------------------------
 Cole Tamaro: UI and status effects (?%)
 
