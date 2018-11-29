@@ -15,12 +15,13 @@ public class Enemy extends Sprite
     public void getCollisionGeneral() 
     {
         if(isTouching(Hammer.class)){
-            //play death sound?
+            Greenfoot.playSound("squish_placeholder.wav");
             getWorld().removeObject(this);
         }
         if(isTouching(Shield.class)){
             Actor Shield = getOneIntersectingObject(Shield.class);
-            getWorld().removeObject(Shield);
+            Greenfoot.playSound("squish_placeholder.wav");
+            //getWorld().removeObject(Shield); //commented out because the game would crash
             getWorld().removeObject(this);
         }
         else if(isTouching(Nebukar.class)){
