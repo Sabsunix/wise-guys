@@ -11,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shield extends Items
 {
     private static final int SHIELDING = 50, IMAGES = 8, AURA = 5;
-    private int integrity = SHIELDING, imgNum = 0, protection = 1;
+    private int integrity = SHIELDING, imgNum = 0, dmg = 1;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
     private GreenfootImage endR, endL;
@@ -26,35 +26,37 @@ public class Shield extends Items
         //int offsetX = world.getWidth();
         //int offsetY = world.getHeight();
         //p = (Nebukar) getOneObjectAtOffset(offsetX, offsetY, Nebukar.class);
-        Level1 level = (Level1) getWorld();
-        p = level.getPlayer();
+        //Level1 level = (Level1) getWorld();
+        //p = level.getPlayer();
+        //System.out.println(p);
     }
 
     /**
      * Act - do whatever the Shield wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     * 
      */
     public void act() 
     {
-        if (isTouching(Nebukar.class) && !p.isShielded()){
-            gotShield();
+        
+        if (p == null){
+            
+            p = (Nebukar) getOneIntersectingObject(Nebukar.class);
+            //gotShield();
 
-        }
-        if (p.isShielded() ){ 
+        } else { 
             animate();
+            setLocation(p.getX(), p.getY());
             
             if (isTouching(Enemy.class)){
-                absorbDamage(protection);// Add your action code here.
+                //System.out.println(p.getX() + " : " + p.getY());
+                absorbDamage(dmg);// Add your action code here.
             }
         }
     }
 
     public void gotShield()
     {
-
         p.hasShield(); //will change players image to shielded
-        setLocation(p.getX(), p.getY());
     }
 
     public void absorbDamage(int damage)
@@ -77,15 +79,18 @@ public class Shield extends Items
     {
         //aura of player shrinking around them upon pickup
 
-        int vertical = p.getImage().getHeight() + 2;
-        int horizontal = p.getImage().getWidth() + 2;
-        GreenfootImage img = new GreenfootImage(horizontal, vertical);
+        // int vertical = p.getImage().getHeight() + 2;
+        // int horizontal = p.getImage().getWidth() + 2;
+        // GreenfootImage img = new GreenfootImage(horizontal, vertical);
         if(p.getLeftFacing()){
-            setImage(leftImgs[imgNum]);
+            if ( getImage() != endL && getImage() != endL){
+                setImage(leftImgs[imgNum]);
+            }
         }else{
-            setImage(images[imgNum]);
+            if ( getImage() != endL && getImage() != endL){
+                setImage(images[imgNum]);
+            }
         }
-
         if (imgNum > 0){
             imgNum--;
         } else {
@@ -95,6 +100,7 @@ public class Shield extends Items
                 setImage(endR);
             }
         }
+        
     }
 
     public void disintegrate()
@@ -107,8 +113,8 @@ public class Shield extends Items
     private void cacheImages(){
         GreenfootImage baseR = new GreenfootImage("Shield-Aura-Right.png");
         GreenfootImage baseL = new GreenfootImage("Shield-Aura-Left.png");
-        GreenfootImage endL = new GreenfootImage("Shielded-Nebukar-Left2.png");
-        GreenfootImage endR = endL;
+        endL = new GreenfootImage("Shielded-Nebukar-Left2.png");
+        endR = endL;
         endR.mirrorHorizontally();
         for (imgNum = 0; imgNum < IMAGES; imgNum++){
             images[imgNum] = new GreenfootImage(baseR);
