@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Left
-comment0.text=\r\n\ 2d\ left\ facing\ surface\ edge\ grass\ tile\ image.\ IMAGE\ \=\ left.png\r\n\ \r\n\ @author\ Nicholas\ Anderson\ \r\n\ @version\ V1.0\ November\ 15,\ 2018\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Image\ Placeholder\ Class\r\n
-numComments=2
