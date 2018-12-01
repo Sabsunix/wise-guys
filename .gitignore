@@ -1,2 +1,4 @@
-*.ctxt
++*.ctxt
++*.class
 *.class
+*.ctxt
