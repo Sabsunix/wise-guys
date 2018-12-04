@@ -54,7 +54,6 @@ public class Door extends Platform
             if(key.hasKey == true)
             {
                 doorOpens();
-                nextLevel();
             }
             else
             {
@@ -69,6 +68,7 @@ public class Door extends Platform
         if (currentImage >= DOOR_COUNT) 
         {
             getWorld().removeObject(this);
+            nextLevel();
         }
         else 
         {
@@ -82,9 +82,8 @@ public class Door extends Platform
      */
     public void nextLevel()
     {
+        Level_2 world2 = new Level_2();
+            Greenfoot.setWorld(world2);
     }
 }
-    
-    
-    
     
