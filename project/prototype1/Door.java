@@ -53,6 +53,7 @@ public class Door extends Platform
         {
             if(key.hasKey == true)
             {
+                Greenfoot.playSound("unlock.wav");
                 doorOpens();
             }
             else
