@@ -14,25 +14,7 @@ public class Level1 extends World
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
-     private static final String[] MAP = 
-     {
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                                   ",
-        "                                                              W W W",
-        "                                                              WWWWW",
-        "                S                                             WWWWW",
-        "             E              W   E    K W   E            E   P DWWWW",
-        "CCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCCCCCCCCCCCR   LCCCCCCCCCCCCCCC",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-        "BBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBBBBBBBBBBBB   BBBBBBBBBBBBBBBB",
-     };
-    
-    
-    
+  
     /**
      * Constructor for objects of class Level1.
      * 
@@ -42,12 +24,7 @@ public class Level1 extends World
         
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
-        topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT;
-       // createPlatforms(MAP);
-        //addPowerUp object code.
-        //add background images.
-        //addObject(thor, getWidth()/2, 0);
-        //addObject(new Shield(), 360, 280); 
+        topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
     }
     
     /**
@@ -115,6 +92,10 @@ public class Level1 extends World
             else if (tileType == 'E')
             {
                 addObject( new Enemy_walking(), tileX, tileY);
+            }
+            else if (tileType == 'b')
+            {
+                addObject(new Enemy_bouncing(), tileX, tileY);
             }
             else if (tileType != ' ')
             {
