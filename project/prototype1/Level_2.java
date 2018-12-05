@@ -16,15 +16,14 @@ public class Level_2 extends Level1
         "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB                 WWWWWWW",
         "                                                    WWWWWWW",
         "                                                    WWWWWWW",
-        "                                        W         S DWWWWWWCCCCCCCCCCCCCCCCCC",
+        "                                        W  E   b  S dWWWWWWCCCCCCCCCCCCCCCCCC",
         "                                   WWWWW WWWWWWWWWWWWWWWWWWBBBBBBBBBBBBBBBBBB",
-        "                                 WW                 WWWWWWWWWWWWWWWWWWWWWWWWW",
+        "                      b          WW                 WWWWWWWWWWWWWWWWWWWWWWWWW",
         "WWWWWWWWWWWWWWWWWWWWWWWWW    WWWWW                                   WWWWWWWW",
         "BBBBBBBBBBBBBBBBBBBBBBBBBW                                           BBBBBBBB",
-        "BBBBBBBBBBBBBBBBBBBBBBBBBBW                                        PKBBBBBBBB",
+        "BBBBBBBBBBBBBBBBBBBBBBBBBBW          b         b          b     E  PKBBBBBBBB",
         "BBBBBBBBBBBBBBBBBBBBBBBBBBBWWWWWWWWWWWWW WWWWWWWWW BBBBBBBBBBBBBBBBBBBBBBBBBB",
     };
-    
     /**
      * Constructor for objects of class Level_2.
      * 
