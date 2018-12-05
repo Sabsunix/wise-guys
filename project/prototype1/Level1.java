@@ -2,7 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * World Map Level1.
- * 
+ *  Thank You Mr. Parrish for the code examples from Platformer that inspired
+ *  and helped meto create this Level1 class. 
  * @author Nicholas Anderson
  * @version V1.0
  * @Date November 15, 2018
