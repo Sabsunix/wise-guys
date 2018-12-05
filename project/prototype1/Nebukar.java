@@ -59,8 +59,6 @@ public class Nebukar extends Sprite
     public void act() 
     {
 
-        checkVertical();
-        checkHorizontal();
 
         applyGravity();
 
@@ -69,6 +67,8 @@ public class Nebukar extends Sprite
         hamCheck();
         pShield();
 
+        checkVertical();
+        checkHorizontal();
     }    
 
     private static GreenfootImage[] flipImages(GreenfootImage[] imgs)

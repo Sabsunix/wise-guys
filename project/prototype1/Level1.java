@@ -2,7 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 /**
  * World Map Level1.
- * 
+ *  Thank You Mr. Parrish for the code examples from Platformer that inspired
+ *  and helped meto create this Level1 class. 
  * @author Nicholas Anderson
  * @version V1.0
  * @Date November 15, 2018
@@ -25,6 +26,7 @@ public class Level1 extends World
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
+        setPaintOrder(Nebukar.class, Enemy.class, Platform.class, Shield.class);
     }
     
     /**

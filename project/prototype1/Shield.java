@@ -14,7 +14,7 @@ public class Shield extends Items
     private int integrity = SHIELDING, imgNum = 0, dmg = 1;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
-    private GreenfootImage endR, endL;
+    private GreenfootImage baseR, baseL, endR, endL;
     private Nebukar p;
     public Shield(){
         cacheImages();
@@ -111,11 +111,12 @@ public class Shield extends Items
     }
 
     private void cacheImages(){
-        GreenfootImage baseR = new GreenfootImage("Shield-Aura-Right.png");
-        GreenfootImage baseL = new GreenfootImage("Shield-Aura-Left.png");
-        endL = new GreenfootImage("Shielded-Nebukar-Left2.png");
+        baseR = new GreenfootImage("Shield-Aura-Right.png");
+         baseL = new GreenfootImage("Shield-Aura-Left.png");
+        endL = new GreenfootImage("Shield-Aura-Left2.png");
+        endL.scale(64,64);
         endR = endL;
-        endR.mirrorHorizontally();
+        //endR.mirrorHorizontally();
         for (imgNum = 0; imgNum < IMAGES; imgNum++){
             images[imgNum] = new GreenfootImage(baseR);
             int sizeX = 32 + AURA * imgNum;
