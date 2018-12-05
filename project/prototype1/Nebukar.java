@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nebukar extends Sprite
 {
-    private static final double MOVE_SPEED = 3.50;
-    private static final double GRAVITY = 0.5;
+    private static final double MOVE_SPEED = 3.75;
+    private static final double GRAVITY = 0.4;
     private static final int MAX_HEALTH = 100;
     //private static final int RIGHT = 0;
     //private static final int LEFT = 1;
@@ -55,9 +55,11 @@ public class Nebukar extends Sprite
      */
     public void act() 
     {
-
-        applyGravity();
         checkVertical();
+        checkHorizontal();
+        
+        applyGravity();
+        
         keyPress();
         move();
         hamCheck();
@@ -73,7 +75,7 @@ public class Nebukar extends Sprite
         {
 
             //shielded  = true;
-            Greenfoot.playSound("sound1.wav");
+            //Greenfoot.playSound("sound1.wav");
         }
     }
 
@@ -116,7 +118,7 @@ public class Nebukar extends Sprite
     {
         if (canJump)
         {
-            setVelocityY(-16);
+            setVelocityY(-14);
             canJump= false;
         }
 
@@ -209,6 +211,50 @@ public class Nebukar extends Sprite
 
     }
 
+    /**
+     * Check for a horizontal collision with a platform.
+     */
+    public void checkHorizontal() 
+    {
+        double velocityX = getVelocityX();
+        if (velocityX == 0) return;
+        int lookX = 0;
+        if (velocityX < 0)
+        {
+            lookX = (int) velocityX - getWidth() / 2;
+        }
+        else
+        {
+            lookX = (int) velocityX + getWidth() / 2;
+        }
+        Actor a = getOneObjectAtOffset(lookX, 0, Platform.class);
+        if (a != null) {
+            moveToContactHorizontal(a);
+            stopMoving();
+        }
+    }
+
+    /**
+     * Move this Actor into contact with the specified Actor in the
+     * horizontal (x) direction.
+     *
+     * @param target The target this sprite is approaching.
+     */
+    public void moveToContactHorizontal(Actor target)
+    {
+        int w2 = (getWidth() + target.getImage().getWidth()) / 2;
+        int newX = 0;
+        if (target.getX() > getX())
+        {
+            newX = target.getX() - w2;
+        }
+        else
+        {
+            newX = target.getX() + w2;
+        }
+        setLocation(newX, getY());
+    }
+
     public void hamCheck()
     {
         Hammer h = (Hammer) getOneIntersectingObject(Hammer.class);
@@ -265,6 +311,7 @@ public class Nebukar extends Sprite
         shielded = false;
         //back to base image
     }
+
     public void unarmed(){
         armed = false;
         //back to base image
@@ -275,34 +322,11 @@ public class Nebukar extends Sprite
     }
 
     /**
-     * Attacks with a mighty weapon!
-     */
-    public void attack()
-    {
-
-    }
-
-    /**
      * Stops Nebukar.
      */
     public void stopMoving()
     {
         setVelocityX(0);
-    }
-
-    /**
-     * Method for enchantment pickup.
-     */
-    public void pickUp()
-    {
-    }
-
-    /**
-     * Checks if Nebukar has the key for unlock the door.
-     */
-    public void keyCheck()
-    {
-
     }
 
 }
