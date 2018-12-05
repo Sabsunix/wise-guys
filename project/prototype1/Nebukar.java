@@ -19,8 +19,13 @@ public class Nebukar extends Sprite
     private boolean canJump; // Jumping is allowed when true
 
     //Array Cache    
-    private static final int MOVECOUNT = 0; //sets animmation counter to 0
-    private static GreenfootImage[] image;
+    private int moveCount = 0; //sets animmation counter to 0
+    private static final int MOVE_COUNT = 6;
+    private static final int DURATION = 5;
+    //private static GreenfootImage[] image;
+    private static GreenfootImage[] runRightImages;
+    private static GreenfootImage faceRight;
+    private static GreenfootImage faceLeft;
 
     private int health;
     private boolean shielded, armed;
@@ -41,13 +46,10 @@ public class Nebukar extends Sprite
         initializeImages();
 
         //placeholders for images. will have potentially 6 images.
-        image = new GreenfootImage[2];
-        image[0] = new GreenfootImage ("Nebukar-Right.png");
-        image[1] = new GreenfootImage ("Nebukar-Left.png");
-        // image[2] = new GreenfootImage ("");
-        // image[3] = new GreenfootImage ("");
-        // image[4] = new GreenfootImage ("");
-        // image[5] = new GreenfootImage ("");
+        // image = new GreenfootImage[2];
+        // image[0] = new GreenfootImage ("Nebukar-Right.png");
+        // image[1] = new GreenfootImage ("Nebukar-Left.png");
+
     }
 
     /**
@@ -55,19 +57,39 @@ public class Nebukar extends Sprite
      */
     public void act() 
     {
+
         checkVertical();
         checkHorizontal();
-        
+
         applyGravity();
-        
+
         keyPress();
         move();
         hamCheck();
         pShield();
 
-        //setImage();
-        //attack();
     }    
+
+    public static void initializeImages()
+    {
+        if (runRightImages == null)
+        {
+            // // Load the right-facing image
+            // faceRight = new GreenfootImage("Nebukar-Right.png");
+            // // Make the left-facing image
+            // faceLeft = new GreenfootImage(faceRight);
+            // faceLeft.mirrorHorizontally();
+
+            // Load the running images
+            runRightImages = new GreenfootImage[MOVE_COUNT];
+            for (int i = 0; i < MOVE_COUNT; i++)
+            {
+                String fileName = "test" + (i + 1) + ".png";
+                runRightImages[i] = new GreenfootImage(fileName);
+            }
+            //runLeftImages = flipImages(runRightImages);
+        }
+    }
 
     public void pShield()
     {
@@ -84,14 +106,21 @@ public class Nebukar extends Sprite
         if (Greenfoot.isKeyDown("right"))
         {
             setVelocityX(MOVE_SPEED);            
-            setImage("Nebukar-Right.png");
+            moveCount++;
+            if (moveCount >= runRightImages.length * DURATION)
+            {
+                moveCount = 0; // reset the count
+            }
+            setImage(runRightImages[moveCount / DURATION]);
+
+            //setImage("Nebukar-Right.png");
 
             facingLeft = false;
         }
         else if (Greenfoot.isKeyDown("left"))
         {
             setVelocityX(-MOVE_SPEED);            
-            setImage("Nebukar-Left.png");
+            //setImage("Nebukar-Left.png");
 
             facingLeft = true;
         }
@@ -99,7 +128,7 @@ public class Nebukar extends Sprite
         {
             stopMoving();
         }
-        if (Greenfoot.isKeyDown("space"))
+        if ((Greenfoot.isKeyDown("space")|| Greenfoot.isKeyDown("up")))
         {
             jump();
         }
@@ -121,14 +150,6 @@ public class Nebukar extends Sprite
             setVelocityY(-14);
             canJump= false;
         }
-
-    }
-
-    /**
-     * images 
-     */
-    public void initializeImages()
-    {
 
     }
 
