@@ -26,6 +26,7 @@ public class Level1 extends World
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
+        setPaintOrder(Nebukar.class, Enemy.class, Platform.class, Shield.class);
     }
     
     /**

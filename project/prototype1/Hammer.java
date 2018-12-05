@@ -35,7 +35,7 @@ public class Hammer extends Sprite
 
     public void act() 
     {
-
+        
         if (launched){
             animate();
             if (getOneIntersectingObject(null) != null && !isTouching(Nebukar.class)){
