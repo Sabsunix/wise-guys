@@ -21,9 +21,10 @@ public class Nebukar extends Sprite
     //Array Cache    
     private int moveCount = 0; //sets animmation counter to 0
     private static final int MOVE_COUNT = 6;
-    private static final int DURATION = 5;
+    private static final int DURATION = 7;
     //private static GreenfootImage[] image;
     private static GreenfootImage[] runRightImages;
+    private static GreenfootImage[] runLeftImages;
     private static GreenfootImage faceRight;
     private static GreenfootImage faceLeft;
 
@@ -70,15 +71,26 @@ public class Nebukar extends Sprite
 
     }    
 
+    private static GreenfootImage[] flipImages(GreenfootImage[] imgs)
+    {
+        GreenfootImage[] flipped = new GreenfootImage[imgs.length];
+        for (int i = 0; i < imgs.length; i++)
+        {
+            flipped[i] = new GreenfootImage(imgs[i]);
+            flipped[i].mirrorHorizontally();
+        }
+        return flipped;
+    }
+
     public static void initializeImages()
     {
         if (runRightImages == null)
         {
             // // Load the right-facing image
-            // faceRight = new GreenfootImage("Nebukar-Right.png");
+            faceRight = new GreenfootImage("Nebukar-Right.png");
             // // Make the left-facing image
-            // faceLeft = new GreenfootImage(faceRight);
-            // faceLeft.mirrorHorizontally();
+            faceLeft = new GreenfootImage(faceRight);
+            faceLeft.mirrorHorizontally();
 
             // Load the running images
             runRightImages = new GreenfootImage[MOVE_COUNT];
@@ -87,7 +99,7 @@ public class Nebukar extends Sprite
                 String fileName = "test" + (i + 1) + ".png";
                 runRightImages[i] = new GreenfootImage(fileName);
             }
-            //runLeftImages = flipImages(runRightImages);
+            runLeftImages = flipImages(runRightImages);
         }
     }
 
@@ -119,9 +131,15 @@ public class Nebukar extends Sprite
         }
         else if (Greenfoot.isKeyDown("left"))
         {
-            setVelocityX(-MOVE_SPEED);            
-            //setImage("Nebukar-Left.png");
+            setVelocityX(-MOVE_SPEED);
+            moveCount++;
+            if (moveCount >= runLeftImages.length * DURATION)
+            {
+                moveCount = 0; // reset the count
+            }
+            setImage(runLeftImages[moveCount / DURATION]);          
 
+            //setImage("Nebukar-Left.png");
             facingLeft = true;
         }
         else
