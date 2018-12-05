@@ -75,7 +75,7 @@ public class Level1 extends World
             {
                 addObject(new Wall(), tileX, tileY);
             }
-            else if (tileType == 'D')
+            else if (tileType == 'd')
             {
                 addObject(new Door(), tileX, tileY);
             }

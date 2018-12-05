@@ -7,6 +7,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version 11.21.18
  * 
  * img credit:
+ * (
+ * sound credit: soundeffectsplus.com 
+ * (
  */
 public class Key extends Items
 {
@@ -31,6 +34,7 @@ public class Key extends Items
         if (player != null){
             //set that Nebukar to be holding the key
             player.hasKey = true;  
+            Greenfoot.playSound("ding.wav");
             getWorld().removeObject(this);
         }
     }
