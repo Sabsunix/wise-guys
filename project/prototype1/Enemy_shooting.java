@@ -8,12 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy_shooting extends Enemy
 {
-    public static final int timer=10;
+    public static final int timer=50;
     public int timers=0;
     public int direction;
+    public int directi;
     public Enemy_shooting(int direct)
     {
         direction=direct;
+        
     }
     /**
      * Act - do whatever the Enemy_shooting wants to do. This method is called whenever
@@ -21,7 +23,9 @@ public class Enemy_shooting extends Enemy
      */
     public void act() 
     {
-        getCollisionGeneral();
+        timer();
+        getCollisionGeneral(10,false);
+
     }    
     public void timer()
     {
@@ -37,6 +41,15 @@ public class Enemy_shooting extends Enemy
     }
     public void Shoot()
     {
-        getWorld().addObject(new Enemy_projectile(direction), getX() , getY());
+        
+        if (direction==1)
+        {
+            directi=1;
+        }
+        if (direction==0)
+        {
+            directi=-1;
+        }
+        getWorld().addObject(new Enemy_projectile(direction), getX()-directi*17 , getY());
     }
 }
