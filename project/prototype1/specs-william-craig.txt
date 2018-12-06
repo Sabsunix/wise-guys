@@ -4,7 +4,7 @@ In my subsystem classes I met specs as follows:
 
 ##  Solo Specification        File              Line#   Comment
 --  ------------------        ----              -----   -------
-1.  Classes: Enemy, Enemy_bouncing, Enemy_projectile, Enemy_shooting, Enemy_walking
+1.  Classes: Enemy, Enemy_bouncing, Enemy_projectile, Enemy_shooting, Win, Enemy_walking
 2.  Overloaded constructor    Enemy_shooting.java  18, 25
 3.  Overloaded method         Enemy_walking.java   76
 4.  Declare array variable    Enemy_walking.java   17,18

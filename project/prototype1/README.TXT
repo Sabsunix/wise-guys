@@ -35,6 +35,7 @@ William Craig's classes: (100%)
 Enemy_walking, 
 Enemy_shooting, 
 Enemy_bouncing and Enemy_projectile
+Win.java
 Enemy_walking file has method for initialize images and image arrays
 sound is played in all classes from superclass, and is a sound I copied from Platformer6
 -------------------------------------
