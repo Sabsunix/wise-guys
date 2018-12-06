@@ -15,18 +15,18 @@ public class Level1 extends World
     private int leftX; // leftmost x coordinate for a tile
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
+    HealthBar hb = new HealthBar();
   
     /**
      * Constructor for objects of class Level1.
      * 
      */
     public Level1()
-    {    
-        
+    {
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
-        setPaintOrder(Nebukar.class, Platform.class, Hammer.class, Enemy.class);
+        setPaintOrder(HealthBar.class, Nebukar.class, Platform.class, Hammer.class, Enemy.class);
         Hammer.dropped();
     }
     
@@ -38,9 +38,13 @@ public class Level1 extends World
         List<Actor> actors = getObjects(null);
         for (Actor a : actors)
         {
-            int moveX = (int) Math.round(a.getX() - dx);
-            a.setLocation(moveX, a.getY());
+            if (a != hb)
+            {
+                int moveX = (int) Math.round(a.getX() - dx);
+                a.setLocation(moveX, a.getY());
+            }
         }
+        
     }
     
     
@@ -111,7 +115,7 @@ public class Level1 extends World
         }
     }
     
-      /**
+    /**
      * Create and arrange platforms in the world.
      */
     protected void createPlatforms(String[] MAP)
@@ -121,11 +125,18 @@ public class Level1 extends World
             makeMapRow(y, MAP);
         }
         addObject(thor, getWidth()/2, getHeight()/2);
+        addObject(hb, 70, 25);
+        //addObject(hb, 200, 200);
     }
  
-     public Nebukar getPlayer()
+    public Nebukar getPlayer()
     {
         return thor;
+    }
+    
+    public HealthBar getHealthBar()
+    {
+        return hb;
     }
 }
 
