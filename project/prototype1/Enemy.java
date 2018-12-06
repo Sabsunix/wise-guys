@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Enemy extends Sprite
 {
+    private int death_counter=15;
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,33 +21,38 @@ public abstract class Enemy extends Sprite
             getWorld().removeObject(shield); 
             getWorld().removeObject(this);
         } else if(isTouching(Nebukar.class)){
-            
+
             Level1 w = (Level1) getWorld();
             Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
             HealthBar hb = (HealthBar) w.getHealthBar();
-            
+
             if(!nebukar.isShielded()){
-                if (nebukar.getHealth() > 0)
-                {
-                    nebukar.setHealth(nebukar.getHealth()-damage);
-                    hb.setSize(nebukar.getHealth());
+                if (death_counter>=15){
+                    if (nebukar.getHealth() > 0)
+                    {
+                        nebukar.setHealth(nebukar.getHealth()-damage);
+                        hb.setSize(nebukar.getHealth());
+                    }
+                    if (nebukar.getHealth() <= 0){
+                        hb.setSize(nebukar.getHealth());
+                    }
+                    //else if(nebukar.getHealth() <= damage)
+                    //{
+                    //    nebukar.setHealth(0);
+                    //}
+                    //Hammer.dropped();
+                    death_counter=0;
                 }
-                if (nebukar.getHealth() <= 0){
-                    hb.setSize(nebukar.getHealth());
-                }
-                /*else if(nebukar.getHealth() <= damage)
-                {
-                    nebukar.setHealth(0);
-                }*/
-                Hammer.dropped();
-                getWorld().removeObject(this);
-            } else {
+            }
+            else {
                 nebukar.noShield();
                 getWorld().removeObject(this);
+
             }
-            
         }
-        else if(isTouching(Hammer.class)){
+
+        else if(
+        isTouching(Hammer.class)){
             Greenfoot.playSound("squish_placeholder.wav");
             getWorld().removeObject(this);
         }
@@ -59,5 +65,6 @@ public abstract class Enemy extends Sprite
                 world.removeObject(this);
             }
         }
+        death_counter++;
     }
 }
