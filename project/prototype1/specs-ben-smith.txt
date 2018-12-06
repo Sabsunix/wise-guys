@@ -1,0 +1,22 @@
+Ben Smith 
+Wise-Guys
+
+1. Main Author for Nebukar Class
+2. Overloaded Constructor at line 38 and 52
+3. Overloaded Method at line 233 and 280
+4. Array variable at line 26 and 27
+5. Animations at line 83 and 114
+6. Initialize Images at line 83
+7. Call set image at line 88 and 90
+8. Collsions checks at line 197 and 254
+9. Sound is in ENEMY super class at line
+10. a. if or if-else loop at lines 238, 242
+      b. While loops 
+      c. for loops at lines 75 and 95
+11. Cast to world at line 185
+
+Attributions
+-------------
+ Images taken from Ari Feldman's Spritelib, which is free at:
+http://www.widgetworx.com/widgetworx/portfolio/spritelib.html
+Used platformer from in class lesson as skeleton for Nebukar

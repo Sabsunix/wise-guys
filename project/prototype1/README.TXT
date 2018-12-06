@@ -2,15 +2,16 @@
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Nebukar Rising
-PURPOSE OF PROJECT: get all classes together and to compille
+PURPOSE OF PROJECT: Finish the final project
 VERSION or DATE: 1.1 12/6/2018
 HOW TO START THIS PROJECT: Press run
 AUTHORS: Wise-Guys
-USER INSTRUCTIONS: Use arrows keys to move and spacebar to jump. Shield can be picked up but no functionality yet.
+USER INSTRUCTIONS: Use arrows keys to move and spacebar to jump. Shield can be picked up up to destroy an enemy and absorb damage. 
+Hammer can be picked up and thrown with Z key. Potions will heal any damage from enemies. Pick up the hidden key to advance to the next level.
 
 Subsystem Classes
 -----------------
-World class (Level1) = Nicholas Anderson (40%)
+World class (Level1) = Nicholas Anderson (100%)
 Platform/platform-subclasses = Nicholas Anderson
 Base class = Nick Anderson
 Center Class = Nick Anderson
@@ -21,16 +22,13 @@ Right Class = Nick Anderson
 Wall Class = Nick Anderson
 Level_1, Level_2, Level_3 = Nick Anderson
 ---------------------------------------
-Items/item-subclasses = Nathaniel Larsen (40%)
+Items/item-subclasses = Nathaniel Larsen (100%)
 Sprite/Hammer/Shield =  Nathaniel Larsen
 //Shield file has cache and initialize images for shield aura.
 
 --------------------------------------
-Player Class (Nebukar) = Ben Smith (35%)
+Player Class (Nebukar) = Ben Smith 100%)
 -Nebukar
--Spite
-Nebukar file has method for initialize images and cache array; images not yet set
-//Sound is temporary and plays when Nebukar touches the shield. 
 -------------------------------------
 
 William Craig's classes: (100%) 
@@ -40,7 +38,7 @@ Enemy_bouncing and Enemy_projectile
 Enemy_walking file has method for initialize images and image arrays
 sound is played in all classes from superclass, and is a sound I copied from Platformer6
 -------------------------------------
-Cole Tamaro: UI and status effects (?%)
+Cole Tamaro: UI and status effects (100%)
 
 EC: World scrolls with player. 
 
