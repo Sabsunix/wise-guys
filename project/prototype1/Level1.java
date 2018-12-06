@@ -27,6 +27,7 @@ public class Level1 extends World
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
         setPaintOrder(Nebukar.class, Platform.class, Hammer.class, Enemy.class);
+        Hammer.dropped();
     }
     
     /**
