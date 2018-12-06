@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Superclass for all Enemies
  * 
- * @author William Craig (Ben Smith added player hit sound for requirement)
+ * @author William Craig
  * @version 11/29/18
  */
 public class Enemy extends Sprite
@@ -24,7 +24,6 @@ public class Enemy extends Sprite
             Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
             if(!nebukar.isShielded()){
                 if(nebukar.getHealth() == 0){
-                    
                     getWorld().removeObject(nebukar); 
                 }
                 else if(nebukar.getHealth() <= damage)
@@ -33,9 +32,7 @@ public class Enemy extends Sprite
                 }
                 else
                 {
-                    
                     nebukar.setHealth(nebukar.getHealth()-damage);
-                    Greenfoot.playSound("punch.wav");
                 }
                 
                 getWorld().removeObject(this);
