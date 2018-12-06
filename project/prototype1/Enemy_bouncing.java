@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The enemy that will have the ability to bounce around
  * 
  * @author William Craig 
- * @version 11/29/18
+ * @version 12/6/18
  */
 public class Enemy_bouncing extends Enemy
 {
@@ -15,15 +15,16 @@ public class Enemy_bouncing extends Enemy
     private int counter=5;
     //private int sound=0;
     /**
-     * Act - do whatever the Enemy_bouncing wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * calls the 2 methods to get this class to work
      */
     public void act() 
     {
         testHeight();
         getCollisionGeneral(25,false);
     }    
-
+    /**
+     * tests for a platform class below the bouncing enemy
+     */
     public void testHeight()
     {
 
@@ -49,7 +50,9 @@ public class Enemy_bouncing extends Enemy
         }
 
     }
-
+    /**
+     * causes the enemy to bounce
+     */
     public void bounce()
     {
         setVelocityY(-1*Bounce_Speed);

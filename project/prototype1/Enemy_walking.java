@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Enemy_walking here.
  * 
  * @author William Craig 
- * @version 11/29/18
+ * @version 12/6/18
  */
 public class Enemy_walking extends Enemy
 {
@@ -18,13 +18,16 @@ public class Enemy_walking extends Enemy
     private static GreenfootImage[] moveRightImgs;
     private static final int MOVE_COUNT = 2;
     private int move=0;
+    /**
+     * This constructor calls initialize images
+     */
+   
     public Enemy_walking()
     {
         initializeImages();
     }
     /**
-     * Act - do whatever the Enemy_walking wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * calls the different methods that make the program work
      */
     public void act() 
     {
@@ -33,6 +36,9 @@ public class Enemy_walking extends Enemy
         move();
         getCollisionGeneral(35,false);
     }    
+    /**
+     * checks collisions with walls so that the enemy can turn around instead of walking throught them
+     */
     public void Collisions()
     {
         if(isTouching(Platform.class)){
@@ -76,6 +82,9 @@ public class Enemy_walking extends Enemy
             }
         }
     }
+    /**
+     * uses code to move the walking enemy
+     */
     public void moving()
     {
         if (direction==right)
@@ -117,10 +126,16 @@ public class Enemy_walking extends Enemy
             }
         }
     }
+    /**
+     * returns the height of the image used for the class
+     */
     public int getHeight()
     {
         return getImage().getHeight();
     }
+    /**
+     * a modified version of the method from Platformer6 to make it work for this class
+     */
     public static void initializeImages()
     {
         if (moveLeftImgs == null || moveRightImgs == null)

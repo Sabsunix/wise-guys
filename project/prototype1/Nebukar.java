@@ -69,12 +69,17 @@ public class Nebukar extends Sprite
         if (getY() > 400)
         {
             setHealth(0);
+            Actor shield = getOneIntersectingObject(Shield.class);
+            getWorld().removeObject(shield);
+            Actor ham = getOneIntersectingObject(Hammer.class);
+            getWorld().removeObject(ham);
         }
         
         if (health <= 0)
         {
             getWorld().addObject(new Instruction("You died!", 64), 200, 200);
             getWorld().addObject(new Button("Retry?"), 200, 250);
+            
             getWorld().removeObject(this);
         }
         

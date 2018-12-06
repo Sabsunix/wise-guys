@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The enemy that will shoot
  * 
  * @author William Craig 
- * @version 11/29/18
+ * @version 12/6/18
  */
 public class Enemy_shooting extends Enemy
 {
@@ -12,6 +12,9 @@ public class Enemy_shooting extends Enemy
     public int timers=0;
     public int direction;
     public int directi;
+    /**
+     * initializes the enemy with a direction
+     */
     public Enemy_shooting(int direct)
     {
         direction=direct;
@@ -25,8 +28,7 @@ public class Enemy_shooting extends Enemy
         }
     }
     /**
-     * Act - do whatever the Enemy_shooting wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * calls the 2 methods to make the program work
      */
     public void act() 
     {
@@ -34,6 +36,9 @@ public class Enemy_shooting extends Enemy
         getCollisionGeneral(10,false);
 
     }    
+    /**
+     *times ever bullet fired by the class
+     */
     public void timer()
     {
         if (timers==timer)
@@ -46,6 +51,9 @@ public class Enemy_shooting extends Enemy
             timers++;
         }
     }
+    /**
+     * shoots a projectile when the timer hits the set time
+     */
     public void Shoot()
     {
         

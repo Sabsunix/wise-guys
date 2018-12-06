@@ -4,14 +4,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Superclass for all Enemies
  * 
  * @author William Craig
- * @version 11/29/18
+ * @version 12/6/18
  */
 public abstract class Enemy extends Sprite
 {
     private int death_counter=15;
     /**
-     * Act - do whatever the Enemy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Checks collisions for all the enemy classes so this code didn't have to be rewriten in every class
      */
     public void getCollisionGeneral(int damage,boolean projectile) 
     {

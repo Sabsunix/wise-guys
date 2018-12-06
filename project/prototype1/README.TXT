@@ -3,7 +3,7 @@
 
 PROJECT TITLE: Nebukar Rising
 PURPOSE OF PROJECT: get all classes together and to compille
-VERSION or DATE: 1.1 11/28/2018
+VERSION or DATE: 1.1 12/6/2018
 HOW TO START THIS PROJECT: Press run
 AUTHORS: Wise-Guys
 USER INSTRUCTIONS: Use arrows keys to move and spacebar to jump. Shield can be picked up but no functionality yet.
@@ -33,12 +33,12 @@ Nebukar file has method for initialize images and cache array; images not yet se
 //Sound is temporary and plays when Nebukar touches the shield. 
 -------------------------------------
 
-William Craig's classes: (30-45%) 
+William Craig's classes: (100%) 
 Enemy_walking, 
 Enemy_shooting, 
 Enemy_bouncing and Enemy_projectile
-Enemy_walking file has method for initialize images and image arrays, but no images are set from it yet
-sound is played in all classes from superclass, and is a sound I copied from Platformer6 to use as a placeholder.
+Enemy_walking file has method for initialize images and image arrays
+sound is played in all classes from superclass, and is a sound I copied from Platformer6
 -------------------------------------
 Cole Tamaro: UI and status effects (?%)
 
