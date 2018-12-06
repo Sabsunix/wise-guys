@@ -63,12 +63,13 @@ public class Nebukar extends Sprite
         applyGravity();
 
         keyPress();
-        move();
+        
         hamCheck();
         pShield();
 
         checkVertical();
         checkHorizontal();
+        move();
     }    
 
     private static GreenfootImage[] flipImages(GreenfootImage[] imgs)
