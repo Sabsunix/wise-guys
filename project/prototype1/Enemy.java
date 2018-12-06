@@ -21,20 +21,25 @@ public abstract class Enemy extends Sprite
             getWorld().removeObject(this);
         } else if(isTouching(Nebukar.class)){
             
+            Level1 w = (Level1) getWorld();
             Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
+            HealthBar hb = (HealthBar) w.getHealthBar();
+            
             if(!nebukar.isShielded()){
-                if(nebukar.getHealth() == 0){
-                    getWorld().removeObject(nebukar); 
-                }
-                else if(nebukar.getHealth() <= damage)
-                {
-                    nebukar.setHealth(0);
-                }
-                else
+                if (nebukar.getHealth() > 0)
                 {
                     nebukar.setHealth(nebukar.getHealth()-damage);
+                    hb.setSize(nebukar.getHealth());
                 }
-                
+                if (nebukar.getHealth() <= 0){
+                    hb.setSize(nebukar.getHealth());
+                    getWorld().removeObject(nebukar);
+                }
+                /*else if(nebukar.getHealth() <= damage)
+                {
+                    nebukar.setHealth(0);
+                }*/
+                Hammer.dropped();
                 getWorld().removeObject(this);
             } else {
                 nebukar.noShield();

@@ -1,0 +1,28 @@
+classes that I am main author:
+Base, Center, Door, Door2, Left, Level1, Level_1, Level_2, Level_3, Platform, Right, and Wall.
+
+Spec 4:
+Classes Level_1, Level_2, Level_3: starting on line 11
+also Door line 13 & 35
+
+Spec 5:
+Classes Door, & Door2: methods starting at lines 31 & 67
+
+Spec 6:
+Door classes at line 31
+
+Spec 7:
+Door class at line 20
+
+Spec 8:
+Door class at line 51
+
+Spec 9:
+Door class at line 56
+
+Spec 10
+a. Door at line 33, 51, 54
+c. Door at line 36
+
+Spec 11:
+Door at line 86
