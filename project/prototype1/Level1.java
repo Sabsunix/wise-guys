@@ -16,6 +16,7 @@ public class Level1 extends World
     private int topY;  // highest y coordinate for a tile
     private Nebukar thor = new Nebukar();
     HealthBar hb = new HealthBar();
+    Instruction healthText = new Instruction("Health", 24);
   
     /**
      * Constructor for objects of class Level1.
@@ -26,7 +27,7 @@ public class Level1 extends World
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
-        setPaintOrder(HealthBar.class, Nebukar.class, Platform.class, Hammer.class, Enemy.class);
+        setPaintOrder(HUD.class, HealthBar.class, Nebukar.class, Platform.class, Hammer.class, Enemy.class);
         Hammer.dropped();
     }
     
@@ -38,7 +39,7 @@ public class Level1 extends World
         List<Actor> actors = getObjects(null);
         for (Actor a : actors)
         {
-            if (a != hb)
+            if (a != hb && a != healthText)
             {
                 int moveX = (int) Math.round(a.getX() - dx);
                 a.setLocation(moveX, a.getY());
@@ -116,6 +117,10 @@ public class Level1 extends World
             {
                 addObject(new Enemy_shooting(1), tileX, tileY);
             }
+            else if (tileType == '2')
+            {
+                addObject(new Door(2), tileX, tileY);
+            }
             else if (tileType != ' ')
             {
                 System.out.println("Wrong tile type: " + tileType);
@@ -134,7 +139,7 @@ public class Level1 extends World
         }
         addObject(thor, getWidth()/2, getHeight()/2);
         addObject(hb, 70, 25);
-        //addObject(hb, 200, 200);
+        addObject(healthText, 50, 25);
     }
  
     public Nebukar getPlayer()
