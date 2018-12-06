@@ -13,7 +13,7 @@ public class Enemy_bouncing extends Enemy
     GreenfootImage image1 = new GreenfootImage("Slime0.png");
     GreenfootImage image2 = new GreenfootImage("Slime1.png");
     private int counter=5;
-    //private int sound=0;
+    private int sound=0;
     /**
      * calls the 2 methods to get this class to work
      */
@@ -27,17 +27,17 @@ public class Enemy_bouncing extends Enemy
      */
     public void testHeight()
     {
-
         if(getOneObjectAtOffset(0,16,Platform.class)!=null)
         {
             setVelocityY(-1*Bounce_Speed);
+             
             setImage(image1);
             counter=0;
-            //if (sound==50){
-            //    Greenfoot.playSound("Slime bounce.wav");
-            //    sound=0;
-            //}
-            //sound++;
+            if (sound==50){
+                Greenfoot.playSound("Slime bounce.wav");
+                sound=0;
+            }
+            sound++;
         }
         double velocityY = getVelocityY() + GRAVITY; 
         setVelocityY(velocityY);  

@@ -32,7 +32,7 @@ public class Enemy_walking extends Enemy
     public void act() 
     {
         Collisions();
-        moving();
+        move(direction);
         move();
         getCollisionGeneral(35,false);
     }    
@@ -51,19 +51,7 @@ public class Enemy_walking extends Enemy
                 direction=right;
             }
         }
-        //if(getX()<=30)
-        //{
-        //    direction=right;
-        //}
-        //int lookY=getY()+11;
-        //Actor r = getOneObjectAtOffset(0, lookY, Right.class);
-        //Actor l = getOneObjectAtOffset(0, lookY, Left.class);
-        //if (r != null) { 
-        //    direction=left;
-        //}
-        //if (l != null) { 
-        //    direction=right;
-        //}
+        
         if(placeholder<100)
         {
             placeholder++;
@@ -85,7 +73,8 @@ public class Enemy_walking extends Enemy
     /**
      * uses code to move the walking enemy
      */
-    public void moving()
+    @Override
+    public void move(int direction)
     {
         if (direction==right)
         {
@@ -146,8 +135,13 @@ public class Enemy_walking extends Enemy
             {
                 String fileName = "Walking" + (i + 1) + ".png";
                 moveLeftImgs[i] = new GreenfootImage(fileName);
+            }
+            int i=0;
+            while (i<moveLeftImgs.length)
+            {
                 moveRightImgs[i] = new GreenfootImage(moveLeftImgs[i]);
                 moveRightImgs[i].mirrorHorizontally();
+                i++;
             }
         }
         

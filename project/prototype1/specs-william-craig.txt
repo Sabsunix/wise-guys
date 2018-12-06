@@ -1,0 +1,29 @@
+Final Specification List for William Craig
+Subsystem(s): Enemies
+In my subsystem classes I met specs as follows:
+
+##  Solo Specification        File              Line#   Comment
+--  ------------------        ----              -----   -------
+1.  Classes: Enemy, Enemy_bouncing, Enemy_projectile, Enemy_shooting, Enemy_walking
+2.  Overloaded constructor    Enemy_shooting.java  18, 25
+3.  Overloaded method         Enemy_walking.java   76
+4.  Declare array variable    Enemy_walking.java   17,18
+5.  At least 2 animations     Enemy_walking.java   93-107,112-126
+                              Enemy_bouncing.java  34,46
+6.  initializeImages()        Enemy_walking.java   139
+7.  Call setImage             Enemy_walking.java   95      +many others
+8.  Call collision method     Enemy.java           17-66
+9.  Play at least 2 sounds    Enemy_bouncing.java  37
+                              Enemy.java           55
+10. a. while loop             Enemy_walking.java   139    Converted for loop
+    b. for loop               Enemy_walking.java   133
+    c. if statement           Enemy.java           17
+11. World cast                Enemy.java           24
+12.
+Extra Credit:
+8.  Smoke effect              
+
+Attributions
+------------
+Most images taken from Ari Feldman's Spritelib, which is free at:
+http://www.widgetworx.com/widgetworx/portfolio/spritelib.html
