@@ -58,8 +58,6 @@ public class Nebukar extends Sprite
      */
     public void act() 
     {
-
-
         applyGravity();
         keyPress();        
         hamCheck();
@@ -67,7 +65,20 @@ public class Nebukar extends Sprite
         checkVertical();
         checkHorizontal();
         move();
-    }    
+        
+        if (getY() > 400)
+        {
+            setHealth(0);
+        }
+        
+        if (health <= 0)
+        {
+            getWorld().addObject(new Instruction("You died!", 64), 200, 200);
+            getWorld().addObject(new Button("Retry?"), 200, 250);
+            getWorld().removeObject(this);
+        }
+        
+    }
 
     private static GreenfootImage[] flipImages(GreenfootImage[] imgs)
     {
@@ -105,7 +116,6 @@ public class Nebukar extends Sprite
     {
         if (isTouching (Shield.class))
         {
-
             //shielded  = true;
             //Greenfoot.playSound("sound1.wav");
         }

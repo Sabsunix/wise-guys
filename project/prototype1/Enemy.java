@@ -33,7 +33,6 @@ public class Enemy extends Sprite
                 }
                 if (nebukar.getHealth() <= 0){
                     hb.setSize(nebukar.getHealth());
-                    getWorld().removeObject(nebukar);
                 }
                 /*else if(nebukar.getHealth() <= damage)
                 {
