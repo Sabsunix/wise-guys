@@ -34,7 +34,7 @@ public class Enemy extends Sprite
                 {
                     nebukar.setHealth(nebukar.getHealth()-damage);
                 }
-                
+                Hammer.dropped();
                 getWorld().removeObject(this);
             } else {
                 nebukar.noShield();
