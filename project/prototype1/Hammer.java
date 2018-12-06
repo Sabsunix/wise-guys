@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A hammer for Nebukar to pickup and throw.
  * 
  * @author Nathaniel Larsen
- * @version 11.22.18
+ * @version 12.4.18
  * 
  * img credit: 
  * sound:

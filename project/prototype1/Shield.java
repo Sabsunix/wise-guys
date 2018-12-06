@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A shield to protect Nebukar
  * 
  * @author Nathaniel Larsen
- * @version 11/16/18
+ * @version 12.4.18
  * 
  * img credit: 
  */
@@ -12,6 +12,7 @@ public class Shield extends Items
 {
     private static final int SHIELDING = 50, IMAGES = 8, AURA = 5;
     private int integrity = SHIELDING, imgNum = 0, dmg = 1;
+    private boolean soundPlayed = false;
     private GreenfootImage[] images = new GreenfootImage[IMAGES];
     private GreenfootImage[] leftImgs = new GreenfootImage[IMAGES];
     private GreenfootImage baseR, baseL, endR, endL;
@@ -44,7 +45,7 @@ public class Shield extends Items
 
         } else { 
             animate();
-            p.hasShield();
+            gotShield();
             setLocation(p.getX(), p.getY());
 
             if (isTouching(Enemy.class)){
@@ -57,6 +58,10 @@ public class Shield extends Items
     public void gotShield()
     {
         p.hasShield(); //will change players image to shielded
+        if (!soundPlayed){
+        Greenfoot.playSound("sound1.wav");
+        soundPlayed = true;
+    }
     }
 
     public void absorbDamage(int damage)

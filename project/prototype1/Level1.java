@@ -26,7 +26,7 @@ public class Level1 extends World
         super(400, 400, 1, false);
         leftX = TILE_WIDTH / 2;
         topY = TILE_HEIGHT / 2 - getHeight() % TILE_HEIGHT; 
-        setPaintOrder(Nebukar.class, Platform.class, Shield.class, Enemy.class);
+        setPaintOrder(Nebukar.class, Platform.class, Hammer.class, Enemy.class);
     }
     
     /**
@@ -42,7 +42,8 @@ public class Level1 extends World
         }
     }
     
-        /**
+    
+    /**
      * Add a row of tiles to the world.
      *
      * @param y The row number in the MAP grid.
