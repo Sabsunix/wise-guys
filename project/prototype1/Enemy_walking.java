@@ -16,7 +16,8 @@ public class Enemy_walking extends Enemy
     int placeholder=0;
     private static GreenfootImage[] moveLeftImgs;
     private static GreenfootImage[] moveRightImgs;
-    private static final int MOVE_COUNT = 0;
+    private static final int MOVE_COUNT = 2;
+    private int move=0;
     public Enemy_walking()
     {
         initializeImages();
@@ -80,10 +81,40 @@ public class Enemy_walking extends Enemy
         if (direction==right)
         {
             setVelocityX(MOVE_SPEED);
+            if (move==0||move==1||move==2)
+            {
+                setImage(moveRightImgs[1]);
+                move++;
+            }
+            else if (move==3||move==4)
+            {
+                setImage(moveRightImgs[0]);
+                move++;
+            }
+            else if (move==5)
+            {
+                setImage(moveRightImgs[0]);
+                move=0;
+            }
         }
         if (direction==left)
         {
             setVelocityX(-1*MOVE_SPEED);
+            if (move==0||move==1||move==2)
+            {
+                setImage(moveLeftImgs[1]);
+                move++;
+            }
+            else if (move==3||move==4)
+            {
+                setImage(moveLeftImgs[0]);
+                move++;
+            }
+            else if (move==5)
+            {
+                setImage(moveLeftImgs[0]);
+                move=0;
+            }
         }
     }
     public int getHeight()
@@ -100,8 +131,7 @@ public class Enemy_walking extends Enemy
             {
                 String fileName = "Walking" + (i + 1) + ".png";
                 moveLeftImgs[i] = new GreenfootImage(fileName);
-                moveRightImgs[i] =
-                new GreenfootImage(moveLeftImgs[i]);
+                moveRightImgs[i] = new GreenfootImage(moveLeftImgs[i]);
                 moveRightImgs[i].mirrorHorizontally();
             }
         }
