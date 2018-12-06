@@ -10,6 +10,9 @@ public class Enemy_bouncing extends Enemy
 {
     private static final double Bounce_Speed = 12;
     private static final double GRAVITY = 0.5;
+    GreenfootImage image1 = new GreenfootImage("Slime0.png");
+    GreenfootImage image2 = new GreenfootImage("Slime1.png");
+    private int counter=5;
     /**
      * Act - do whatever the Enemy_bouncing wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,13 +24,24 @@ public class Enemy_bouncing extends Enemy
     }    
     public void testHeight()
     {
-        if(getY()>=293)
+        
+        
+        if(getOneObjectAtOffset(0,16,Platform.class)!=null)
         {
             setVelocityY(-1*Bounce_Speed);
+            setImage(image1);
+            counter=0;
         }
-        double velocityY = getVelocityY() + GRAVITY; // add gravity
-        setVelocityY(velocityY);  // save current velocity
+        double velocityY = getVelocityY() + GRAVITY; 
+        setVelocityY(velocityY);  
         move();
+        if (counter==5){
+            setImage(image2);
+        }
+        else{
+            counter++;
+        }
+        
     }
     public void bounce()
     {
