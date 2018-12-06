@@ -15,7 +15,14 @@ public class Enemy_shooting extends Enemy
     public Enemy_shooting(int direct)
     {
         direction=direct;
-        
+        if (direct==1){
+            GreenfootImage image = new GreenfootImage("Shootingleft.png");
+            setImage(image);
+        }
+        else{
+            GreenfootImage image = new GreenfootImage("Shooting.png");
+            setImage(image);
+        }
     }
     /**
      * Act - do whatever the Enemy_shooting wants to do. This method is called whenever
