@@ -4,9 +4,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A potion to heal Nebukar
  * 
  * @author Nathaniel Larsen
- * @version 11/16/18
+ * @version 12.4.18
  * 
  * img credit: zeldapedia
+ *  
+ * sound credit: soundeffectsplus.com 
+ *  
  */
 public class Potion extends Items
 {
@@ -35,7 +38,7 @@ public class Potion extends Items
                 if (p.getHealth() > MAX){
                     p.setHealth(MAX);
                 }
-                //Greenfoot.playSound("glug.wav")
+                Greenfoot.playSound("clink.wav");
                 getWorld().removeObject(this);
             }
         } 

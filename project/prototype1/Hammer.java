@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * A hammer for Nebukar to pickup and throw.
  * 
  * @author Nathaniel Larsen
- * @version 11.22.18
+ * @version 12.4.18
  * 
  * img credit: 
  * sound:
@@ -52,10 +52,10 @@ public class Hammer extends Sprite
                 held = false;
             }
             if(p.getLeftFacing()) {
-                setLocation(p.getX() - getImage().getWidth() / 2, p.getY());
-                setImage(images[IMAGES - 1]);
+                setLocation(p.getX() - getImage().getWidth() / 2 , p.getY() - 2);
+                setImage(images[IMAGES - 2]);
             } else {
-                setLocation(p.getX() + getImage().getWidth() / 2, p.getY());
+                setLocation(p.getX() + getImage().getWidth() / 2 + 2, p.getY() - 2);
                 setImage(images[IMAGES / 2]);
             }
         }
