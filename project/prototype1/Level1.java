@@ -110,7 +110,7 @@ public class Level1 extends World
             }
             else if (tileType == '0')
             {
-                addObject(new Enemy_shooting(0), tileX, tileY);
+                addObject(new Enemy_shooting(), tileX, tileY);
             }
             else if (tileType == '1')
             {

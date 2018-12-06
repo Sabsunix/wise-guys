@@ -15,6 +15,13 @@ public class Enemy_shooting extends Enemy
     /**
      * initializes the enemy with a direction
      */
+    public Enemy_shooting()
+    {
+        this(0);
+    }
+    /**
+     * initializes the enemy with a direction
+     */
     public Enemy_shooting(int direct)
     {
         direction=direct;
