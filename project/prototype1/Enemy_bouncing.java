@@ -20,7 +20,7 @@ public class Enemy_bouncing extends Enemy
     public void act() 
     {
         testHeight();
-        getCollisionGeneral(25,false);
+        getCollisionGeneral(20,false);
     }    
     /**
      * tests for a platform class below the bouncing enemy

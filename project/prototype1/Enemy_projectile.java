@@ -24,7 +24,7 @@ public class Enemy_projectile extends Enemy
     public void act() 
     {
         move();
-        getCollisionGeneral(50,true);
+        getCollisionGeneral(40,true);
     }    
     /**
      * sets the speed of the projectile based on the direction variable

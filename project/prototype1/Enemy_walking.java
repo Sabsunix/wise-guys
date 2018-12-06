@@ -34,7 +34,7 @@ public class Enemy_walking extends Enemy
         Collisions();
         move(direction);
         move();
-        getCollisionGeneral(35,false);
+        getCollisionGeneral(25,false);
     }    
     /**
      * checks collisions with walls so that the enemy can turn around instead of walking throught them
