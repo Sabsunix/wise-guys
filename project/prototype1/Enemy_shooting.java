@@ -14,6 +14,7 @@ public class Enemy_shooting extends Enemy
     public Enemy_shooting(int direct)
     {
         direction=direct;
+        
     }
     /**
      * Act - do whatever the Enemy_shooting wants to do. This method is called whenever

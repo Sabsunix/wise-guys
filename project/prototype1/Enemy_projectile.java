@@ -15,7 +15,9 @@ public class Enemy_projectile extends Enemy
     public Enemy_projectile(int direction)
     {
         int direct = direction;
+        
         speed(direct);
+        
     }
     public void act() 
     {
