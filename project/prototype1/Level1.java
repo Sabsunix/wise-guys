@@ -121,6 +121,10 @@ public class Level1 extends World
             {
                 addObject(new Door(2), tileX, tileY);
             }
+            else if (tileType == '4')
+            {
+                addObject(new Win(), tileX, tileY);
+            }
             else if (tileType != ' ')
             {
                 System.out.println("Wrong tile type: " + tileType);

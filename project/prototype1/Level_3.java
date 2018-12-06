@@ -19,7 +19,7 @@ public class Level_3 extends Level1
         "                                                                            ",
         "                                                        b    b      S       ",
         "              S                                         W    W    P         ",
-        "            b   E    E        b   E  E              E  WWW EWWW bWWW  b     b",
+        "            b   E    E        b   E  E              E  WWW EWWW bWWW  b  4  b",
         "CCCCCCCCCCCCCCCCCCCCCCCCCR  LCCCCCCCCCCCCCCCCCR  LCCCCCCCCCCCCCCCCCR  LCCCCCC",
         "BBBBBBBBBBBBBBBBBBBBBBBBB    BBBBBBBBBBBBBBBBB    BBBBBBBBBBBBBBBBB    BBBBB ",
         "BBBBBBBBBBBBBBBBBBBBBBBBB    BBBBBBBBBBBBBBBBB    BBBBBBBBBBBBBBBBB    BBBBB ",
