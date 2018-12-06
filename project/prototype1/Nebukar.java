@@ -61,12 +61,9 @@ public class Nebukar extends Sprite
 
 
         applyGravity();
-
-        keyPress();
-        
+        keyPress();        
         hamCheck();
         pShield();
-
         checkVertical();
         checkHorizontal();
         move();
