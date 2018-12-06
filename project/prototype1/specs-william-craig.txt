@@ -27,3 +27,6 @@ Attributions
 ------------
 Most images taken from Ari Feldman's Spritelib, which is free at:
 http://www.widgetworx.com/widgetworx/portfolio/spritelib.html
+Initialize images was taken and modified from the Platformer6 scenario
+The enemy death sound was copied from Platformer6
+the slime bounce sound was found from soundbible.com
