@@ -5,7 +5,7 @@ import java.util.List;
  * Displays the player's health
  * 
  * @author Cole Tomaro
- * @version 11/19/18
+ * @version 12/5/18
  */
 public class HealthBar extends Actor
 {
