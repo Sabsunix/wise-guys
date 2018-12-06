@@ -30,7 +30,7 @@ public class Enemy_walking extends Enemy
         Collisions();
         moving();
         move();
-        getCollisionGeneral();
+        getCollisionGeneral(35,false);
     }    
     public void Collisions()
     {

@@ -17,7 +17,7 @@ public class Enemy_bouncing extends Enemy
     public void act() 
     {
         testHeight();
-        getCollisionGeneral();
+        getCollisionGeneral(25,false);
     }    
     public void testHeight()
     {

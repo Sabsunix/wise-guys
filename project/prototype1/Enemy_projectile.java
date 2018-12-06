@@ -19,14 +19,8 @@ public class Enemy_projectile extends Enemy
     }
     public void act() 
     {
-        Actor p = getOneIntersectingObject(Platform.class);
-        if (p != null)
-        {
-            World world = getWorld();
-            world.removeObject(this);
-        }
         move();
-        getCollisionGeneral();
+        getCollisionGeneral(50,true);
     }    
     public void speed(int direct)
     {

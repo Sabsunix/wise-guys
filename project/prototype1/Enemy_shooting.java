@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy_shooting extends Enemy
 {
-    public static final int timer=10;
+    public static final int timer=50;
     public int timers=0;
     public int direction;
     public Enemy_shooting(int direct)
@@ -21,7 +21,9 @@ public class Enemy_shooting extends Enemy
      */
     public void act() 
     {
-        getCollisionGeneral();
+        timer();
+        getCollisionGeneral(10,false);
+
     }    
     public void timer()
     {
