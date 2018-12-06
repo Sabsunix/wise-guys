@@ -13,11 +13,17 @@ public class Door extends Platform
     private static GreenfootImage[] doorOpensImgs;
     private static final int DOOR_COUNT = 3;
     private int currentImage = 0;
-    
+    private int whatLevel=0;
     public Door()
+    {
+        this(1);
+    }
+    
+    public Door(int level)
     {
         initializeImages();
         setImage(doorOpensImgs[0]);
+        whatLevel=level;
     }
 
     /**
@@ -42,7 +48,7 @@ public class Door extends Platform
         }
     }
     
-        /**
+    /**
      * method to check if player intersects door holding key = true
      * next level
      */
@@ -83,8 +89,16 @@ public class Door extends Platform
      */
     public void nextLevel()
     {
-        Level_2 world2 = new Level_2();
+        if (whatLevel==1)
+        {
+            Level_2 world2 = new Level_2();
             Greenfoot.setWorld(world2);
+        }
+        else if (whatLevel==2)
+        {
+            Level_3 world3 = new Level_3();
+            Greenfoot.setWorld(world3);
+        }
     }
 }
     
