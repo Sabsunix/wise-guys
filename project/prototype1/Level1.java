@@ -108,6 +108,14 @@ public class Level1 extends World
             {
                 addObject(new Hammer(), tileX, tileY);
             }
+            else if (tileType == '0')
+            {
+                addObject(new Enemy_shooting(0), tileX, tileY);
+            }
+            else if (tileType == '1')
+            {
+                addObject(new Enemy_shooting(1), tileX, tileY);
+            }
             else if (tileType != ' ')
             {
                 System.out.println("Wrong tile type: " + tileType);

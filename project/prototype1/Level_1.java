@@ -19,7 +19,7 @@ public class Level_1 extends Level1
         "                                                              W W W W",
         "                                                              WWWWWWW",
         "                S                                             WWWWWWW",
-        "             E              W   E    K W   E            E   P dWWWWWW",
+        "             E              W0  E    K W   E            E   P dWWWWWW",
         "CCCCCCCCCCCCCCCCCCR LR LCCCCCCCCCCCCCCCCCCCCCCCCR W LCCCCCCCCCCCCCCCCC",
         "BBBBBBBBBBBBBBBBBB  BB  BBBBBBBBBBBBBBBBBBBBBBBB  B  BBBBBBBBBBBBBBBBB",
         "BBBBBBBBBBBBBBBBBB  BB  BBBBBBBBBBBBBBBBBBBBBBBB  B  BBBBBBBBBBBBBBBBB",

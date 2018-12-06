@@ -24,9 +24,9 @@ public abstract class Enemy extends Sprite
             Level1 w = (Level1) getWorld();
             Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
             HealthBar hb = (HealthBar) w.getHealthBar();
+            if (death_counter>=15){
+                if(!nebukar.isShielded()){
 
-            if(!nebukar.isShielded()){
-                if (death_counter>=15){
                     if (nebukar.getHealth() > 0)
                     {
                         nebukar.setHealth(nebukar.getHealth()-damage);
@@ -42,11 +42,11 @@ public abstract class Enemy extends Sprite
                     //Hammer.dropped();
                     death_counter=0;
                 }
-            }
-            else {
-                nebukar.noShield();
-                getWorld().removeObject(this);
+                else {
+                    nebukar.noShield();
+                    getWorld().removeObject(this);
 
+                }
             }
         }
 
