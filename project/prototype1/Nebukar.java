@@ -46,13 +46,13 @@ public class Nebukar extends Sprite
 
         initializeImages();
 
-        //placeholders for images. will have potentially 6 images.
-        // image = new GreenfootImage[2];
-        // image[0] = new GreenfootImage ("Nebukar-Right.png");
-        // image[1] = new GreenfootImage ("Nebukar-Left.png");
+        
 
     }
-
+    public void Nebukar()
+    {
+        
+    }
     /**
      * Move and interact
      */
