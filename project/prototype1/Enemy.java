@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Enemy extends Sprite
 {
-    private int death_counter=15;
+    private int death_counter=60;
     /**
      * Checks collisions for all the enemy classes so this code didn't have to be rewriten in every class
      */
@@ -24,7 +24,7 @@ public abstract class Enemy extends Sprite
             Level1 w = (Level1) getWorld();
             Nebukar nebukar = (Nebukar) getOneIntersectingObject(Nebukar.class);
             HealthBar hb = (HealthBar) w.getHealthBar();
-            if (death_counter>=15){
+            if (death_counter>=60){
                 if(!nebukar.isShielded()){
 
                     if (nebukar.getHealth() > 0)
