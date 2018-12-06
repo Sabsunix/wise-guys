@@ -19,6 +19,7 @@ Door class = Nick Anderson
 Left Class = Nick Anderson
 Right Class = Nick Anderson
 Wall Class = Nick Anderson
+Level_1, Level_2, Level_3 = Nick Anderson
 ---------------------------------------
 Items/item-subclasses = Nathaniel Larsen (40%)
 Sprite/Hammer/Shield =  Nathaniel Larsen
