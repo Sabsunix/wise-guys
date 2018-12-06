@@ -13,6 +13,7 @@ public class Enemy_bouncing extends Enemy
     GreenfootImage image1 = new GreenfootImage("Slime0.png");
     GreenfootImage image2 = new GreenfootImage("Slime1.png");
     private int counter=5;
+    //private int sound=0;
     /**
      * Act - do whatever the Enemy_bouncing wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,15 +23,20 @@ public class Enemy_bouncing extends Enemy
         testHeight();
         getCollisionGeneral(25,false);
     }    
+
     public void testHeight()
     {
-        
-        
+
         if(getOneObjectAtOffset(0,16,Platform.class)!=null)
         {
             setVelocityY(-1*Bounce_Speed);
             setImage(image1);
             counter=0;
+            //if (sound==50){
+            //    Greenfoot.playSound("Slime bounce.wav");
+            //    sound=0;
+            //}
+            //sound++;
         }
         double velocityY = getVelocityY() + GRAVITY; 
         setVelocityY(velocityY);  
@@ -41,8 +47,9 @@ public class Enemy_bouncing extends Enemy
         else{
             counter++;
         }
-        
+
     }
+
     public void bounce()
     {
         setVelocityY(-1*Bounce_Speed);
