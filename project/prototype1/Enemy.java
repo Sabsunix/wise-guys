@@ -26,9 +26,13 @@ public class Enemy extends Sprite
                 if(nebukar.getHealth() == 0){
                     getWorld().removeObject(nebukar); 
                 }
-                else if(nebukar.getHealth() < damage)
+                else if(nebukar.getHealth() <= damage)
                 {
-                    
+                    nebukar.setHealth(0);
+                }
+                else
+                {
+                    nebukar.setHealth(nebukar.getHealth()-damage);
                 }
                 Hammer.dropped();
                 getWorld().removeObject(this);
