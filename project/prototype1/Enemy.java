@@ -20,7 +20,7 @@ public class Enemy extends Sprite
         } else if(isTouching(Shield.class)){
             Actor shield = getOneIntersectingObject(Shield.class);
             Greenfoot.playSound("squish_placeholder.wav");
-            getWorld().removeObject(shield); //commented out because the game would crash
+            getWorld().removeObject(shield); 
             getWorld().removeObject(this);
         } else if(isTouching(Nebukar.class)){
             

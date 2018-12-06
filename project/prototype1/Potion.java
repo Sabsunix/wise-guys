@@ -35,7 +35,7 @@ public class Potion extends Items
                 if (p.getHealth() > MAX){
                     p.setHealth(MAX);
                 }
-                //Greenfoot.playSound("glug.wav")
+                Greenfoot.playSound("clink.wav");
                 getWorld().removeObject(this);
             }
         } 

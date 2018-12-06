@@ -52,10 +52,10 @@ public class Hammer extends Sprite
                 held = false;
             }
             if(p.getLeftFacing()) {
-                setLocation(p.getX() - getImage().getWidth() / 2, p.getY());
-                setImage(images[IMAGES - 1]);
+                setLocation(p.getX() - getImage().getWidth() / 2 , p.getY() - 2);
+                setImage(images[IMAGES - 2]);
             } else {
-                setLocation(p.getX() + getImage().getWidth() / 2, p.getY());
+                setLocation(p.getX() + getImage().getWidth() / 2 + 2, p.getY() - 2);
                 setImage(images[IMAGES / 2]);
             }
         }

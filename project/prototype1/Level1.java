@@ -98,6 +98,9 @@ public class Level1 extends World
             else if (tileType == 'b')
             {
                 addObject(new Enemy_bouncing(), tileX, tileY);
+            }else if (tileType == 'H')
+            {
+                addObject(new Hammer(), tileX, tileY);
             }
             else if (tileType != ' ')
             {
